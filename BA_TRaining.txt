@@ -1,0 +1,8 @@
+BA Training questions:
+1. wht KT points i ned to take ask questions to knwo more about
+2. Techinques, understadning how to write the reuiremetn/
+3. if risks are there, dependecies, then how can we tagged t sprint, 
+i mean depedant team might take some time
+4. low level rules, formulas, logics, flows, who will give requirements?
+5. i want to see, ral time story map, sprints, u.s., for understadning,
+6.
