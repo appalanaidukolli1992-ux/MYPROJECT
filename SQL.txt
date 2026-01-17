@@ -1,0 +1,96 @@
+SQL
+1.
+1. RANK Employees by Salary within Department
+SELECT Name, Department, Salary,
+       RANK() OVER (PARTITION BY Department ORDER BY Salary DESC) AS SalaryRank
+FROM Employees;
+
+2. top 3 employeess
+SELECT *
+FROM item_temp
+ORDER BY item_no DESC
+FETCH FIRST 3 ROWS ONLY
+
+1st row
+SELECT item_no
+FROM (
+    SELECT item_no
+    FROM item_temp
+    ORDER BY item_no
+)
+WHERE ROWNUM = 1
+---
+
+Rank(), dense_rank(),row_numer()
+Requirement	Function
+Competition ranking (1st, 2nd, 2nd, 4th)	RANK()
+Sequential ranking(1,2,2,3) without gaps	DENSE_RANK()
+Exact top N rows (no ties)	ROW_NUMBER()
+
+-----
+fetch depts,in order of who is having more employess.
+select dept_id, count(*)
+from employess
+group by dept
+order by count(*)
+fetch 1 row only;
+--------------
+Returns all employees who share the highest salary in each department.
+'SELECT *
+FROM (
+    SELECT e.*,
+           DENSE_RANK() OVER (
+               PARTITION BY department_id
+               ORDER BY salary DESC
+           ) AS rnk
+    FROM employees e
+)
+WHERE rnk = 1;
+
+.---------------
+first and last record of the table:
+SELECT *
+FROM (
+    SELECT t.*,
+           ROW_NUMBER() OVER (ORDER BY some_column) rn_asc,
+           ROW_NUMBER() OVER (ORDER BY some_column DESC) rn_desc
+    FROM your_table t
+)
+WHERE rn_asc = 1
+   OR rn_desc = 1;
+
+------------
+
+firwst and last record of the table:
+SELECT *
+FROM (
+    SELECT t.*,
+           ROW_NUMBER() OVER (ORDER BY some_column) rn_asc,
+           ROW_NUMBER() OVER (ORDER BY some_column DESC) rn_desc
+    FROM your_table t
+)
+WHERE rn_asc = 1
+   OR rn_desc = 1;
+
+
+..order bydesc limti1
+union
+..order by asc limit 1
+--------------
+
+select dept_id, count(*)
+from employess
+group by dept
+order by count(*)
+fetch first 1 row only;
+
+-----------------
+table empty or not:
+SELECT CASE
+         WHEN EXISTS (SELECT 1 FROM your_table)
+         THEN 'NOT EMPTY'
+         ELSE 'EMPTY'
+       END AS table_status
+FROM dual;
+
+---------------

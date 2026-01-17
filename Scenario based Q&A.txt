@@ -1,0 +1,230 @@
+Scenario based questions techincal : Java script, C#.
+1.Internal overstock management app takes too long to load partner data.
+o isolate and fix frontend-related slowness when your page uses JavaScript + C# API, use a systematic, layered approach. Below is a step-by-step debugging workflow focused on frontend performance diagnosis and connection with API calls.
+
+1. Confirm if the Slowness Is on the Frontend
+Use Chrome DevTools → Network Tab
+
+Open DevTools (F12) → Network.
+
+Reload the page.
+
+Inspect each API call:
+
+TTFB (Time To First Byte) — server delay.
+
+Content Download — network size/latency.
+
+Finish vs. Response End — large data payloads or slow frontend processing.
+
+Indicator:
+
+If API responses arrive quickly (e.g., <500 ms) but UI freezes for seconds → frontend bottleneck.
+
+2. Measure JavaScript Execution Time
+Performance Tab
+
+Record while reloading or performing slow action.
+
+Look for:
+
+Long “Scripting” blocks → inefficient loops, heavy DOM manipulation.
+
+Long “Rendering” or “Painting” → too many UI updates.
+
+Hover over long bars to find the exact JS functions consuming time.
+
+Example:
+
+If you see processKPIData() or updateDashboard() taking 2000ms, open that function in Sources → Breakpoints and analyze logic.
+
+3. Add Manual Timing in Code
+
+Use console.time() / console.timeEnd() to isolate sections:
+
+console.time("API Fetch");
+const data = await fetch('/api/stock');
+console.timeEnd("API Fetch");
+
+console.time("Data Render");
+renderDashboard(await data.json());
+console.timeEnd("Data Render");
+
+
+Interpretation:
+
+If "API Fetch" is long → backend/API issue.
+
+If "Data Render" is long → frontend rendering or data processing issue.
+
+--------------------------
+Analyze JavaScript Bottlenecks
+Common Causes
+Symptom	Cause	Fix
+UI freezes when rendering data	Looping through large datasets synchronously	
+Use pagination, virtual scrolling, or requestAnimationFrame()
+High scripting time in Performance tab	Heavy synchronous JS (e.g., nested .map()
+ or .forEach())	Use web workers for parallel processing
+Repeated DOM updates	Multiple small DOM manipulations inside loops
+	Build HTML in memory, then inject once
+Repeated re-render	Unnecessary state recalculations or reflows	Debounce
+ event handlers, reduce watchers (React/Vue)
+
+--------------------
+
+Debugging java script in broweserr
+1. open dev tools
+2. you can find option sources, console,network,performance,memory,application
+3. go to source, open that js file, under job monitoring section, 
+check multiple option like DOM break points,Evetlisteres like buttn click, MOuse clikc,
+watch, call stack options
+4. or setup break pints where you feel it is susepective
+----
+
+writingn debugger; so that we can gett all the variable at that stage then we can stack tace
+to evalute all variable, and identify what exactly going wrong
+or use console.log(); console.table() to see objects in tabular format.
+
+------------
+utilize chromer toole like performcne profiler to see and record application runtime
+--------------
+
+red yellow lines in timelines to see longer processes.
+-----
+analyse call tree view
+to seee functions consume loger times.
+--
+console.trace() to track sequence of fucntions calls and bottle necks.
+
+-----------------
+use tools like lighthouse to  to see slowness codem unused codes.
+
+use techinques like request idel call back() or workers to 
+break donw long running asynchronus calls. to keep main thred responseive
+
+.--------------
+Track Network Payload Size
+
+Large JSON responses slow rendering.
+
+Use Network → Preview tab → check payload size.
+
+If >1–2 MB, ask backend to paginate or compress response (gzip or br)
+-----------------
+Frontend (JavaScript) optimization:
+
+Avoid deeply nested loops or frequent DOM updates in rendering data.
+
+Use async/await properly to avoid blocking operations
+
+--------
+3. API Response Delay in Data Retrieval
+Scenario Question:
+Your internal partner management page queries multiple data tables via a C# API, causing lag. How do you improve response time?
+
+Answer Approach:
+
+Implement async/await with Task.WhenAll() in C# to call multiple services concurrently.
+
+Cache frequently accessed data (e.g., partner list) in-memory or Redis.
+
+Example:
+
+csharp
+var partnersTask = GetPartnersAsync();
+var regionsTask = GetRegionsAsync();
+
+await Task.WhenAll(partnersTask, regionsTask);
+
+var response = new {
+    Partners = partnersTask.Result,
+    Regions = regionsTask.Result
+};
+This reduces total wait time when both calls can run in parallel.
+------------
+Handling Large Data in Frontend
+
+Q: You need to display 50k rows in a web table without freezing UI.
+
+Answer:
+
+Virtualize rows using libraries like react-window.
+
+Chunk processing with setTimeout if doing custom rendering.
+
+Only render visible rows.
+
+Example:
+import { FixedSizeList as List } from 'react-window';
+<List height={400} itemCount={50000} itemSize={35}>
+  {({ index, style }) => <div style={style}>{data[index].name}</div>}
+</List>
+
+
+---------------------------
+How do you handle API errors gracefully?
+
+Answer:
+
+Use try/catch with async/await.
+
+Display user-friendly error messages.
+
+Retry or fallback if possible.
+-----------------
+1. Slow API Response
+
+Q: An internal API returns large datasets slowly.
+
+Answer:
+
+Optimize LINQ queries.
+
+Return only needed fields.
+
+Use async I/O.
+
+Consider server-side paging.
+
+------------------------
+Handling Concurrency
+
+Q: Two users try to update the same record simultaneously.
+
+Answer:
+
+Use optimistic concurrency with EF Core’s [Timestamp] attribute.
+
+Catch DbUpdateConcurrencyException and notify user.
+
+-------------------
+
+1. Page Load or Component Rendering Slow
+
+Q: A page takes too long to load charts and tables.
+
+Answer:
+
+Diagnose with DevTools (Network, Performance).
+
+Lazy-load non-critical components.
+
+Paginate large tables.
+
+Use concurrent API calls.
+Promise.all([
+  fetch('/api/users'),
+  fetch('/api/orders')
+])
+.then(responses => Promise.all(responses.map(r => r.json())))
+.then(([users, orders]) => renderPage({ users, orders }));
+
+
+------------------------------------
+
+
+
+
+------------
+
+

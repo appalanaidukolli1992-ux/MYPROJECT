@@ -1,0 +1,45 @@
+1.
+If asked “How would you use SQL and Power BI to track KPIs for faulty items or overstock?”, say:
+
+“I’d begin by writing SQL queries to extract and aggregate transactional data across warehouse and supplier systems. Then, I’d clean and model that data in Power Query to connect sales, inventory, and reverse logistics sources. Once modeled, I create Power BI dashboards with KPI visuals such as overstock percentage, fault return rate, and resell ratio to monitor performance. I ensure each KPI aligns with sustainability targets and provides actionable insights for Supply Planning decisions
+
+------------------
+2.“Can you describe a situation where you started with a hypothesis and used data to validate or disprove it?”
+
+I worked on a case study about products sold as multipacks — meaning items that come in more than one flat pack — and the goal was to implement GS1 identifiers to improve tracking and traceability for each package.
+
+During the project, my hypothesis was that our current identifiers were not effectively supporting store operations or the customer experience.
+
+To validate this, I first investigated the full business and supply chain flow — from distribution to store handling and customer purchase. I also visited stores and spoke with store co-workers and super users to understand real issues. They mentioned that customers sometimes missed picking up all the packages of a multipack product, which led to complaints and returns.
+
+That insight gave me a clear direction, so I explored the databases and complaint systems. I extracted one year of data related to customer complaints, return reasons, and item types. After filtering for multipack articles, I found a significant number of issues related to missed packages and incorrect identifiers.
+
+I compiled this analysis into a Power BI report and presented it to stakeholders, showing data-backed evidence of the issue. This helped confirm that the current identifiers were indeed causing operational challenges, which supported the decision to move forward with assigning GS1 identifiers to these product
+
+----------------------
+
+3.How do you decide which analytics initiatives to prioritize or which KPIs to focus on?”
+
+Answer:
+
+“I start by linking every analytics initiative to a clear business outcome. For example, in a reverse supply chain context, I focus on KPIs that directly influence value recovery and sustainability — like % recovered stock, resale revenue, and recycling rates.
+
+I then assess data availability, potential impact, and stakeholder interest.
+
+For instance, when we analyzed circularity metrics at IKEA, I prioritized recovered stock % and resale revenue because they directly reflected both financial and sustainability goals. This made the analysis actionable and aligned with the company’s strategy
+
+---------------------------
+
+4.How do you validate your analysis or ensure your insights are accurate?”
+
+Answer:
+
+“I always perform validation at multiple levels:
+
+Data validation: Cross-check record counts and totals across source systems.
+
+Logic validation: Compare calculated KPIs (e.g., return rate) with historical benchmarks.
+
+Business validation: Review with business teams to confirm the data reflects real scenarios.
+
+-------------

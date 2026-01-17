@@ -1,0 +1,82 @@
+1. Can you describe a time you collaborated with people from different functions (e.g., business and IT) to reach a common goal?
+
+In one of my projects, I worked on a case study focused on assigning GTINs (Global Trade Item Numbers) for different packaging hierarchies within our PLM system.
+
+The objective was to identify at which stage of product development the GTIN should be assigned, while also assessing technical feasibility, system readiness, and potential roadblocks.
+
+To achieve this, I collaborated closely with PLM business analysts, scrum masters, and developers. I gathered insights from the business side to understand their process needs and connected with the IT team to review technical limitations. Based on these discussions, I identified possible scenarios, system dependencies, and business flows that needed to be aligned.
+
+I then documented the complete end-to-end process—bridging business and technical perspectives—to create a clear recommendation for implementation. As a result, stakeholders had a clear direction and proceeded with implementing GTINs across multiple packaging hierarchies.
+
+My analysis and collaboration were well appreciated, and I was recognized with an on-the-spot “Gems Award” for my contribution.
+
+---------------------------------------
+
+2. 
+How do you handle disagreements or different opinions within a team?
+“If someone in the team has a different opinion, I first make sure we all understand the main goal. Then I listen to their reason and explain my view clearly. We compare which option helps the goal better. If we still don’t agree, I suggest testing the idea or ask the right person to decide. I always keep it respectful and focus on the work, not on personal feelings
+
+
+----
+3.What role do you usually take in a group — do you lead, facilitate, or support?
+
+
+------
+
+
+4. Tell me about a time you helped improve communication in your team.
+
+situation:
+I was working on a project called OFP, a new digital transformation platform for ordering. Our responsibility was to ensure that product master data in this platform adhered to GS1 GDSN standards, which required close alignment between the Master Data team and the OFP project team.
+Task:
+After a few weeks, I noticed progress was slow and communication gaps were causing misalignment. The Master Data team was overloaded with other priorities, and the OFP team lacked clarity on existing processes.
+Action:
+To address this, I introduced a structured communication approach:
+
+Scheduled weekly alignment meetings with clear agendas and expected outcomes.
+Created a tracking sheet to capture previous decisions, current goals, and next steps.
+Ensured both teams had visibility of progress and responsibilities.
+
+Result:
+This improved collaboration significantly. The project got back on track, and we successfully integrated GS1 standards into the new platform as planned. The structured communication model reduced delays and was later adopted for similar initiatives.
+---------------------------------
+How do you make sure everyone’s input is heard in a discussion?
+
+-------------------------------
+--------------------------------
+conetxt 2 : Group roles, respoibilities
+1.team lead /falitaotr:
+ Team leaders are responsible for training team members, setting strategy, and monitoring progress towards goals.
+ Good leaders should have strong communication, problem-solving, organizational, and delegation skills.
+
+2. Initiator:
+Initiators contribute ideas and suggestions for resolving problems within the group
+They listen closely to what other team members say and use the information they gather to propose alternative solutions. Initiators also gather information from old ideas to find new solutions to important or recurring issues. People in the initiator role tend to be highly vocal and proactive in their duties. They drive change and encourage others to take action.
+
+3. Arbitrator: Arbitrators mainly watch how the team works and step in if problems or misunderstandings arise. They help explain different points of view, make sure everyone is heard, give praise, stay neutral, and support a positive team atmosphere.
+
+4. Notetakers :  write down what happens in team meetings, including important points, updates, and decisions. They organize these notes and share them with the team so everyone stays informed and can work toward the same goal.
+5. Coaches : support team members by helping them with their tasks and overcoming problems. They use their experience to give advice and guidance, often acting as mentors for the team.
+6. Coordinators :  connect people and information to help the team work toward shared goals. They suggest how team members can work together, highlight strengths, and help assign roles to make the team more effective.
+
+
+------------------
+
+H&M Work culture
+H&M has a value-driven and inclusive team culture. We’re a big-hearted, collaborative team that thrives on diverse perspectives. The company encourages continuous learning and growth by offering opportunities to work in different roles and with people from various backgrounds. It’s a place where everyone’s contribution is valued, and the culture is built on strong shared values
+
+Values
+1-We are one team
+Our workplace is inclusive, and respectful. 
+We encourage and help each other to win together.
+2.we belive in people
+We trust each other to take responsibility and value different ideas.
+
+3.entreprunership
+understand business , stay curious, and look for new ideas.flexible mindset
+
+4.cost consinuosness
+ using resources responsibly and doing more with less
+ 
+ 5.
+

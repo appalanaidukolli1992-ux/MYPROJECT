@@ -1,0 +1,62 @@
+SQL 
+--
+Q1.Query optimization steps and approaches:
+
+1. Analyze the query
+
+Use EXPLAIN/EXPLAIN ANALYZE or execution plan to see how the database executes it.
+
+Identify full table scans, expensive joins, or sorts.
+
+2. Rewrite the query
+
+Replace correlated subqueries with joins or window functions if possible.
+
+Remove unnecessary columns and tables.
+
+Use EXISTS instead of IN for subqueries with large datasets.
+
+3. Indexing
+
+Add indexes on selective columns used in WHERE, JOIN, ORDER BY, GROUP BY.
+
+Consider composite or covering indexes.
+
+Avoid applying functions on indexed columns.
+
+4. Partitioning and sharding
+
+Split large tables by range, list, or hash to reduce scan size.
+
+5. Use materialized views / temporary tables
+
+Precompute aggregations or intermediate results.
+
+6. Optimize joins
+
+Use the correct join type (INNER, LEFT) and join order.
+
+Ensure join columns are indexed.
+
+7. Limit data early
+
+Apply filters before joins or aggregations.
+
+Use pagination (LIMIT, TOP) when fetching subsets.
+
+8. Reduce network overhead
+
+Fetch only required columns.
+
+Avoid unnecessary client-side processing.
+
+9. Monitor and tune
+
+Check database statistics, update them if stale.
+
+Measure before and after changes.
+
+10. Database-specific features
+
+Use query hints, optimizer directives, or parallel execution if supporte
+-----------------------------------

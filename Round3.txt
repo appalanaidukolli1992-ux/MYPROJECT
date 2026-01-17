@@ -1,0 +1,164 @@
+Plan
+
+overstock managent,how do you help on this bringout stories from the data?
+--story telling skills
+--data extraction ,trasnformation, visualiszation, busiling KPIs, metrics, isghts for the data--
+-- how well we can show the dashboards, or any auotmated pipelines to generate and hsrae the reports
+-- SQL reporting skills,
+--how to deal with large datasets
+--automtedjobs
+--power automate
+-- power BI, dashobatrds,visualizing KPIs
+-- how can utilize pyhton on this automations
+-- C#, java scirpt for applicaiton developmet
+-- cloud enviroment knwodlges, data pipelines
+
+
+SQL & NAlaytical :
+1.Walk me through a time you explored raw messy supply
+ chain data and identified a meaningful business insight.
+ 
+
+2. How do you structure SQL to analyze millions of records and
+ not crash the database?”
+ I avoid heavy operations directly on full tables. I structure analysis using these principles:
+
+• Filter early — apply WHERE conditions before any joins. I never join the whole dataset. I start by limiting to relevant date range, product category, region, etc.
+• Use CTEs or temporary tables — break analysis into lightweight steps, not one massive query. Each stage reduces volume.
+• Select only required columns — no SELECT *. This directly reduces memory footprint.
+• Index awareness — for frequently filtered or joined columns, I check if indexes exist. If not, I request/index where justified.
+• Aggregate late — only calculate sums, groupings, or window functions after volume is reduced.
+• Avoid Cartesian joins — always use explicit join conditions with proper keys.
+• Pagination or batch execution if needed — when exporting or processing multiple years.
+
+
+-- STEP 1: Narrow down first instead of touching full 40M
+WITH recent_inventory AS (
+    SELECT sku_id, location_id, quantity, last_movement_date
+    FROM inventory
+    WHERE last_movement_date >= DATEADD(day, -180, GETDATE())   -- filter early
+),
+-- STEP 2: Only select SKUs with any stocks > 0
+filtered_active AS (
+    SELECT sku_id, location_id, quantity, last_movement_date
+    FROM recent_inventory
+    WHERE quantity > 0
+),
+-- STEP 3: Now apply no-movement logic
+no_movement AS (
+    SELECT sku_id, location_id, quantity,
+           DATEDIFF(day, last_movement_date, GETDATE()) AS days_idle
+    FROM filtered_active
+    WHERE last_movement_date <= DATEADD(day, -90, GETDATE())   -- final logic
+)
+
+SELECT sku_id, location_id, quantity, days_idle
+FROM no_movement
+ORDER BY days_idle DESC;
+
+-----------
+
+-- 1) Filter last 180 days only, avoid full historical scan
+WITH recent_data AS (
+    SELECT 
+        sku_id,
+        location_id,
+        quantity,
+        safety_stock,
+        inbound_date,
+        last_sale_date,
+        sold_qty,
+        returned_qty
+    FROM inventory_fact
+    WHERE inbound_date >= DATEADD(day, -180, GETDATE())
+),
+
+-- 2) Compute core KPIs
+kpi_base AS (
+    SELECT
+        sku_id,
+        location_id,
+        quantity,
+        safety_stock,
+        DATEDIFF(day, inbound_date, GETDATE()) AS stock_age_days,
+        DATEDIFF(day, last_sale_date, GETDATE()) AS days_since_last_sale,
+        CASE 
+            WHEN sold_qty = 0 THEN 0
+            ELSE (CAST(returned_qty AS FLOAT) / sold_qty)
+        END AS return_rate,
+
+        CASE 
+            WHEN quantity > safety_stock * 1.3 THEN 1 ELSE 0
+        END AS overstock_flag,
+
+        CASE 
+            WHEN last_sale_date <= DATEADD(day, -90, GETDATE()) THEN 1 ELSE 0
+        END AS slow_moving_flag
+    FROM recent_data
+)
+
+-- 3) Final classification
+SELECT
+    sku_id,
+    location_id,
+    quantity,
+    stock_age_days,
+    return_rate,
+    overstock_flag,
+    slow_moving_flag,
+    CASE 
+        WHEN overstock_flag = 1 AND slow_moving_flag = 1 AND stock_age_days > 120
+        THEN 'CRITICAL_IDLE'
+        WHEN overstock_flag = 1 THEN 'OVERSTOCK_ACTIVE'
+        WHEN slow_moving_flag = 1 THEN 'SLOW_MOVING'
+        ELSE 'HEALTHY'
+    END AS inventory_bucket
+
+FROM kpi_base
+ORDER BY stock_age_days DESC;
+Answer structure: Context → Approach → Insight → Impact
+
+Example answer:
+
+“In a previous project, I needed to identify inventory that was blocking warehouse capacity or creating cost issues. The dataset included millions of records with stock levels, sales, returns, and last movement dates.
+
+I approached it by first filtering to recent activity to avoid overwhelming the database. Then, I calculated key metrics per SKU:
+
+Overstock flag for SKUs exceeding safety stock thresholds
+
+Slow-moving flag for SKUs with no sales in 90 days
+
+Return rate to see items frequently returned
+
+Stock age to see how long items have been idle
+
+Next, I combined these KPIs to segment inventory into meaningful buckets:
+
+Critical idle (overstock + slow-moving + aged)
+
+Overstock but moving
+
+Slow-moving
+
+Healthy stock
+
+This allowed stakeholders to focus on the 12–15% of SKUs that were consuming over 50% of warehouse volume. The insight directly supported actions like external resale, markdowns, or recycling, freeing space and reducing holding cost.
+
+I would present this through dashboards so the team could track KPIs dynamically by region, supplier, and category.”
+
+Key points to convey:
+
+You understand data structure and scale.
+
+You translate raw data into business-relevant insights.
+
+You focus on impact and action, not just numbers.
+
+You can explain it clearly to non-technical stakeholders.
+
+
+----
+
+3 If I ask you to find dead/no-moving stock — how would you approach it? Not just SQL query, but logic, starting assumptions, KPI definition.”
+
+4 If overstock is high in one region — what questions do you ask next before presenting anything?”
