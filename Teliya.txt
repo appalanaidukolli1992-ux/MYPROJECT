@@ -1,0 +1,130 @@
+Teliya
+1.
+explain about what tyes of authentications autherization you used in u r application
+
+2.oauth how does it work
+
+3. how can ensure qulity and securuity of u r code_
+
+4. can u write code for index creating
+
+5. diff btn SP and funtion
+.-----------------------------
+6. Promises and observables
+Use Task for API calls
+Task
+
+Represents one asynchronous operation
+
+Produces a single result
+
+Completes once
+
+Used with async / await
+
+Use Observable for events or streams
+IObservable<T>
+
+Represents a stream of values over time
+
+Can emit multiple results
+
+Push-based
+
+Requires subscription
+
+----------------------
+7. DI
+
+8. performace, 
+
+9. what devops u used
+10. why u r chnaging carrier and moving back to developer_
+why it is support and moving to developer_
+
+11. diff btn .net and core
+
+12. how do u do data modeling?
+13. how do u connect database?
+14. 
+
+--------
+Here’s a concise interview-ready answer for “How do you handle session management 
+in .NET Core”:
+
+Answer:
+
+"In ASP.NET Core, session management can be handled in multiple ways depending on 
+the application type and scalability requirements.
+
+Server-side sessions:
+
+Use the built-in session middleware with IDistributedCache for storage.
+
+Options include in-memory cache for single-server apps or Redis / SQL Server for 
+distributed scenarios.
+
+Session data is linked to the client via a secure cookie (.AspNetCore.Session).
+
+Example: storing a user ID in session and retrieving it in controllers.
+
+Token-based (stateless) approach:
+
+For APIs or SPA apps, use JWT tokens.
+
+The server does not maintain state; the client passes the token with each request.
+
+Scalable and avoids server-side session storage.
+
+ASP.NET Core Identity:
+
+Provides cookie-based session management, authentication, and authorization 
+out-of-the-box for MVC/Razor apps.
+
+Best practices:
+
+Set HttpOnly and Secure flags on cookies.
+
+Limit session timeout (IdleTimeout).
+
+Avoid storing large objects; store only IDs and fetch data as needed.
+
+Use distributed storage (Redis) for multi-server deployments.
+
+Overall, for web apps, server-side session with Redis works well; for APIs/SPAs, 
+JWT tokens are preferred for stateless scalability."
+------------------------
+Here’s a concise interview-ready answer for “How do you handle state management 
+in .NET/Core and web applications”:
+
+Answer:
+
+"State management is about tracking user or application data across multiple 
+requests. Since HTTP is stateless, we need mechanisms to persist state.
+
+Server-side state:
+
+In ASP.NET Core, we can use Session middleware with in-memory or distributed 
+cache (like Redis) to store user-specific data.
+
+Example: storing user ID or shopping cart in session.
+
+Client-side state:
+
+For SPA apps like Angular, we use services, component state, or browser storage 
+(LocalStorage, SessionStorage, cookies) to maintain temporary or persistent state.
+
+Stateless token-based approach:
+
+For APIs, JWT tokens carry user claims; the server does not store session state, 
+making it scalable.
+
+Best practices:
+
+Minimize storing large objects; store only identifiers.
+
+Use distributed cache for multi-server deployments.
+
+Protect sensitive data with encryption.
+
+Combine server and client state carefully for SPA + API architectures."

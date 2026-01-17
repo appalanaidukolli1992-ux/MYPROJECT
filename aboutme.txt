@@ -1,0 +1,12 @@
+Hi, my name is Appala Naidu Kolli, but most people call me Bobby.
+It’s a pleasure to meet you.
+I come from a small village in South India and completed my Master’s degree in Computer Applications in 2016. Shortly after, I joined TCS, 
+and IKEA has been my first and longest-running project—it's been nearly 9 years now.
+I began my career as a Support Analyst in the AMS team for IKEA Product Communication (PC), working across areas like media, translations, 
+labels, range management, ToCompete, and RDC. Later, I transitioned to Product Range Management (PRM), supporting PIA and its family of applications. 
+After the AMS team ramped down, I took on a Lean Analyst role, acting as an SME and coach for the DevOps teams handling AMS operations.
+For the past 2 years, I’ve been part of the GS1 team, working as a Business Analyst and Data Analyst. My focus has been on integrating
+ GS1 standards into IKEA’s digital ecosystem—leading case studies on GTIN assignment in PLM, packaging hierarchy, GDSN data models for IMD,
+ product data standardization via OFP, Trade Item Hub, and classification through GOC.
+I’m passionate about building scalable, standards-driven solutions that align with IKEA’s business goals and values. 
+I look forward to contributing further in a Solution Architect role.

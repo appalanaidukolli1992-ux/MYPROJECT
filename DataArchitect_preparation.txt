@@ -1,0 +1,237 @@
+Data architect:
+A data product is a purpose-built, business-focused dataset or data service that 
+is created on top of a modern data platform. It uses data from multiple sources, 
+applies defined business rules and transformations, and delivers trusted, 
+well-governed information to specific consumers.
+
+A data product is not the entire data warehouse or lake. Instead, it is a curated 
+output of the platform that represents a single source of truth for a specific 
+business domain or use case.
+
+It includes:
+
+Clean, well-modeled data
+
+Business definitions and rules
+
+Technical and business metadata
+
+Data quality checks and governance
+
+Clear ownership and accountability
+
+A data product is designed so that consumer applications and business teams can 
+easily understand what the data represents, trust its accuracy, and use it 
+without needing deep technical knowledge of the underlying systems.
+
+It can be consumed in flexible ways such as:
+
+SQL tables or views
+
+APIs
+
+Scheduled jobs
+
+Reports and dashboards
+
+Data pipelines feeding downstream systems
+
+In short, a modern data platform enables data products, and a data product is a 
+reliable, reusable, and consumer-ready data asset that delivers business value.
+---------------
+Data Product Capabilities
+1. Data Ingestion & Integration
+
+Pulls data from multiple internal and external sources
+
+Handles batch and streaming data
+
+Applies standardization and validation rules
+
+2. Data Modeling & Transformation
+
+Applies business logic and domain rules
+
+Produces curated, domain-oriented models
+
+Maintains historical and current views where required
+
+3. Data Quality & Reliability
+
+Data quality checks (completeness, accuracy, freshness)
+
+Monitoring and alerting for failures or anomalies
+
+Defined SLAs/SLOs for consumers
+
+4. Metadata & Documentation
+
+Business definitions and KPIs
+
+Technical metadata (schema, lineage)
+
+Usage guidance and examples
+
+5. Governance & Security
+
+Access control and role-based permissions
+
+Data classification and compliance
+
+Auditability and lineage tracking
+
+6. Discoverability
+
+Registered in a data catalog
+
+Searchable and easily discoverable
+
+Clear ownership and contact points
+
+7. Consumption Interfaces
+
+SQL tables / views
+
+APIs (REST / GraphQL)
+
+Reports and dashboards
+
+Data feeds and pipelines
+
+8. Reusability & Interoperability
+
+Designed for multiple consumers
+
+Standard formats and contracts
+
+Backward-compatible schema changes
+
+9. Ownership & Lifecycle Management
+
+Named product owner and steward
+
+Versioning and change management
+
+Deprecation and evolution strategy
+
+10. Value Measurement
+
+Usage tracking and adoption metrics
+
+Business impact measurement
+
+Feedback loop from consumers
+
+One-line summary
+
+A data product provides trusted, governed, discoverable, and reusable data with 
+clear ownership and multiple consumption options, built to serve a specific 
+business purpose
+-------------------
+Technologies Needed for Data Products
+1. Data Sources
+
+Operational databases (PostgreSQL, MySQL, Oracle)
+
+SaaS applications (Salesforce, Workday)
+
+Logs, events, IoT, files
+
+2. Data Ingestion & Streaming
+
+Batch ingestion: Fivetran, Informatica, Talend
+
+Streaming: Kafka, Kinesis, Azure Event Hubs
+
+CDC: Debezium, Oracle GoldenGate
+
+3. Storage (Data Platform)
+
+Data Lake: S3, ADLS, GCS
+
+Data Warehouse / Lakehouse:
+
+Snowflake
+
+BigQuery
+
+Databricks
+
+Redshift
+
+4. Data Processing & Transformation
+
+SQL-based: dbt
+
+Distributed processing: Spark, Flink
+
+Dataframes: Python, Pandas
+
+5. Orchestration & Scheduling
+
+Airflow, Dagster, Prefect
+
+Azure Data Factory
+
+6. Data Quality & Observability
+
+Great Expectations
+
+Monte Carlo
+
+Soda
+
+Datadog (monitoring)
+
+7. Metadata, Catalog & Lineage
+
+Collibra
+
+Alation
+
+DataHub
+
+OpenMetadata
+
+8. Governance & Security
+
+IAM (AWS IAM, Azure AD)
+
+Column / row-level security
+
+Data masking and encryption
+
+Apache Ranger
+
+9. Consumption & Access
+
+Analytics: Power BI, Tableau, Looker
+
+APIs: REST, GraphQL
+
+Data sharing: Snowflake Secure Sharing
+
+Reverse ETL: Hightouch, Census
+
+10. CI/CD & Version Control
+
+GitHub, GitLab
+
+CI pipelines for data (dbt Cloud, Jenkins)
+
+Schema versioning
+
+11. Data Product Management
+
+Data contracts
+
+Domain ownership (Data Mesh tools)
+
+Product documentation portals
+
+Key takeaway
+
+A data product is not a single tool. It is built using a stack of technologies 
+across ingestion, storage, processing, governance, and consumption, all operating 
+on a modern data platform.
+------------------

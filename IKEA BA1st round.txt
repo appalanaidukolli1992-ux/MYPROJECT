@@ -1,0 +1,148 @@
+IKEA BA 1st round 
+Procurement :
+his comprises all major activities such as supplier,sourcing, price management,
+ contracts ,
+etc.,
+-------------
+UX stands for “User Experience.”
+It refers to how a person feels and interacts when using a product, system, or 
+service—such as a website, app, or device.
+
+Key aspects include:
+
+Ease of use
+
+Efficiency
+
+Clarity of design
+
+Satisfaction during and after use
+as a BA:
+review wireframes, prototypes, and mockups
+cooloborate with UI UX teams,
+validate designs against business goals and user needs
+----------------	
+Tools and Practices
+
+Familiarity with tools such as Figma, Miro, Jira, Confluence
+
+Understanding agile processes (sprints, backlog refinement, acceptance criteria)
+
+Ability to write clear user stories and acceptance criteria
+
+-----------------
+points
+:
+understadning big piture look small details
+analytical skills
+documentaiton
+requirement gathering
+communicate complex things in simple way
+Ability to lead with a business mindset(self starter,)
+challenge stakeholders and determine what is relevant 
+A quality focus to all solution management activities 
+Basic knowledge of different delivery methods and software lifecycle management 
+Understanding of test methods and tools with focus on acceptance testing. 
+
+------------TAUS-------
+My name is Appala Naidu Kolli. I currently work as an IT Business Analyst in the 
+GS1 traceability and compliance program at IKEA Supply Chain Development, where 
+I’m engaged as a consultant from TCS. I have been working with IKEA for almost 
+nine years across different units—INGKA, Inter IKEA Range, and now Supply. This 
+is my fourth assignment within the IKEA ecosystem.
+
+I started my career in 2017 as an Application Support Analyst and progressed into 
+an AMS Lead role, managing over 40+ core Range business applications. My 
+responsibilities covered end-to-end application lifecycle operations, including 
+incident and problem management, release and deployment coordination, root-cause 
+analysis, functional and technical testing, and SLA governance. I also acted as a 
+stakeholder contact point, ensured operational stability, and led 
+cross-functional collaboration. Over time, I became a subject matter expert, 
+coached teams, and contributed to process improvements and automation initiatives.
+
+In 2023, I transitioned into Supply Chain Development as an IT Business Analyst. 
+My work focuses on traceability, data quality, and GS1 standards adoption across 
+Range and Supply. I support business exploration, requirements analysis, and 
+compliance readiness—especially around sustainability and trade regulations such 
+as EUDR, CBAM, and Digital Product Passport. I prepare case studies, analyse 
+business and technical gaps, create structured findings and recommendations, and 
+translate business needs into digital product requirements. I also work with data 
+analysis, visualization, and stakeholder alignment to enable value-driven 
+decision-making. and we have POC team where there i help them on creating
+ user storeis collecting the requiremtns
+writing acceptance criteris, verifications, assitign developers to understand the 
+business process, clarifications, guding them to understand business rules, logics
+
+
+Overall, I bring a mix of business analysis, technical understanding, supply 
+chain knowledge, and strong experience within IKEA ways of working. I enjoy 
+solving complex problems, working with diverse teams, and contributing to 
+scalable, future-ready solutions
+
+--------------
+
+Why this role?
+The Eight Core IKEA Values:
+
+Togetherness: Trust, collaboration, and having fun as a team.
+
+Caring for people and planet: A commitment to positive social and environmental 
+impact, including sustainability.
+
+Cost-consciousness: Finding smart, affordable solutions without sacrificing 
+quality, rooted in frugality.
+
+Simplicity: Being straightforward, pragmatic, and avoiding bureaucracy.
+
+Renew and improve: Constantly seeking better ways to do things and solve 
+challenges.
+
+Different with a meaning: Questioning the status quo and embracing unconventional 
+thinking.
+
+Give and take responsibility: Empowering individuals to grow and contribute.
+
+Lead by example: Leadership as action, not just position. 
+---------------
+
+What u bring into this team?
+I bring a strong blend of business and technical expertise, with deep knowledge 
+of IKEA business processes, compliance, traceability, and legislation. I have 
+experience translating complex business requirements into actionable digital 
+solutions, supporting end-to-end supply chain improvements.
+
+I also bring strong analytical and problem-solving skills, a structured way of 
+working, and the ability to collaborate effectively across global, 
+cross-functional teams. Beyond technical skills, I contribute by sharing 
+knowledge, mentoring colleagues, and helping the team continuously learn and 
+improve.
+
+In short, I bring both the expertise and the mindset to deliver value, support 
+innovation, and strengthen the team’s impact within IKEA.
+
+-------------------
+	1. What do you feel are the qualities of an effective team?
+I think an effective team reflects H&M’s values — being one team, believing in 
+people, and always improving. For me, teamwork means trusting and supporting each 
+other, communicating openly, and working toward the same goal. I also believe in 
+creating space for new ideas and continuous improvement, because that’s how teams 
+grow and deliver great results together.
+
+--------
+When someone contradicts me, I first listen carefully to understand their point 
+of view. Then I explain my perspective clearly, using facts, data, or examples to 
+support it. I focus on showing the benefits of my approach rather than forcing my 
+opinion.
+
+I also try to find common ground and involve them in discussion, so we reach a 
+solution that works for both sides. My goal is to influence decisions positively 
+while keeping the conversation respectful and collaborative
+
+------------------
+
+Strategic thinking:
+Analytical judgment:
+Confident communication:
+Problem-solving mindset:
+Stakeholder management:;
+Adaptability:

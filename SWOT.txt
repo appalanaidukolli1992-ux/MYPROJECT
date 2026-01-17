@@ -1,0 +1,196 @@
+SWOT:
+1. Questions on Strengths
+Q1. You mentioned strong IKEA domain knowledge. How will this help you as a BA?
+
+What they test: Relevance of past experience
+Ideal answer direction:
+Explain how domain knowledge helps you:
+
+Ask better questions
+
+Understand processes faster
+
+Reduce onboarding time
+
+Anticipate impacts and dependencies
+
+Emphasize that domain knowledge accelerates value delivery but does not replace 
+stakeholder validation.
+
+Q2. You claim effective stakeholder management. Can you give an example?
+
+What they test: Proof, not theory
+Ideal answer direction:
+Use STAR format:
+
+Situation: Conflicting stakeholder expectations
+
+Task: Align requirements
+
+Action: Workshops, prioritization, impact analysis
+
+Result: Agreement, reduced rework, on-time delivery
+
+Q3. What does “end-to-end ownership of application lifecycle” mean to you as a BA?
+
+What they test: BA maturity
+Ideal answer direction:
+Mention involvement across:
+
+Discovery & requirements
+
+Design & validation
+
+Development support
+
+Testing & UAT
+
+Go-live & post-release support
+
+2. Questions on Weaknesses (Very Important)
+Q4. You mentioned transitioning into a fully dedicated BA role. How are you 
+handling this?
+
+What they test: Growth mindset
+Ideal answer direction:
+Position it positively:
+
+Acknowledge the transition
+
+Highlight steps taken: BA frameworks, Agile ceremonies, stakeholder facilitation
+
+Show confidence, not insecurity
+
+Avoid sounding inexperienced; focus on adaptability.
+
+Q5. You mentioned sometimes skipping tasks when handling multiple items. How are 
+you addressing this?
+
+What they test: Accountability and risk management
+Ideal answer direction:
+
+Admit it honestly
+
+Explain mitigation actions:
+
+Task prioritization
+
+Kanban boards
+
+Reminders
+
+Checklists
+
+This shows self-awareness + corrective action, which interviewers value.
+
+Q6. How do you ensure nothing falls through the cracks now?
+
+What they test: Process discipline
+Ideal answer direction:
+Mention:
+
+Backlog grooming
+
+Daily task review
+
+Sprint planning alignment
+
+Clear ownership and follow-ups
+
+3. Questions on Opportunities
+Q7. You mentioned learning more about procurement. How are you doing that?
+
+What they test: Proactiveness
+Ideal answer direction:
+
+Shadowing SMEs
+
+Reviewing process docs
+
+Asking “why” behind requirements
+
+Participating in workshops
+
+Studying end-to-end procurement flow
+
+Q8. How do you plan to strengthen business-facing engagement?
+
+What they test: Communication skills
+Ideal answer direction:
+
+Regular touchpoints
+
+Business-friendly documentation
+
+Visual models (process flows)
+
+Speaking in outcomes, not technical terms
+
+4. Questions on Threats
+Q9. You mentioned handover gaps when replacing someone. How would you handle this 
+role if knowledge is limited?
+
+What they test: Risk mitigation
+Ideal answer direction:
+
+Structured handover checklist
+
+Reverse knowledge transfer
+
+Documentation validation
+
+Stakeholder interviews
+
+Process walkthroughs
+
+Q10. How do you manage situations where stakeholders have different ways of 
+working?
+
+What they test: Adaptability
+Ideal answer direction:
+
+Observe first
+
+Adapt communication style
+
+Align on common goals
+
+Establish working agreements
+
+5. Meta / Reflection Questions (Very Likely)
+Q11. Why did you include weaknesses in your SWOT?
+
+What they test: Authenticity
+Ideal answer:
+Because self-awareness helps growth and realistic planning.
+
+Q12. If selected, which SWOT area will you work on first?
+
+What they test: Prioritization
+Ideal answer direction:
+
+Address threats and weaknesses early
+
+Build domain depth
+
+Strengthen stakeholder alignment
+
+Q13. How does this SWOT make you a good fit for this BA role?
+
+What they test: Self-positioning
+Ideal answer direction:
+
+Strengths align with role
+
+Weaknesses are manageable
+
+Opportunities match role expectations
+
+Threats have mitigation plans
+
+30-Second Closing Answer (Use If Asked)
+
+“This SWOT reflects my self-awareness as a BA. My strengths allow me to deliver 
+value quickly, my weaknesses are actively managed, my opportunities align with 
+the role’s growth path, and I already have mitigation strategies for potential 
+risks.”

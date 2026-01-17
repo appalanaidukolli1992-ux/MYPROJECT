@@ -1,0 +1,150 @@
+core Anular topics chec list :
+
+NPM, Node modules,Angular CLI,Annotations meta data,SPA,
+
+1. Core Angular Topics
+Master the essentials and some intermediate/advanced concepts:
+
+Components, Modules, Services
+
+
+Data Binding (1-way, 2-way), Event handling
+
+Routing and Navigation (+ route guards)
+
+Forms (Template-driven and Reactive)
+
+Pipes (built-in and custom)
+
+Directives (structural & attribute)
+
+Dependency Injection
+
+Observables and RxJS basics
+
+Angular Lifecycle Hooks
+
+HTTP Client (GET/POST/PUT/DELETE)
+
+Error handling and Interceptors
+
+Lazy Loading, Feature Modules
+
+Unit Testing (basic concepts)
+. .NET Backend Essentials
+Understand how the backend works and integrates with Angular:
+
+C# Basics (OOP, LINQ, Collections)
+
+ASP.NET Core Web API
+
+Controllers, routing
+
+Dependency Injection
+
+Attribute-based routing --attrtibute on controller instead central routing it ll 
+take attirbutes idrectky from url and sends ot method
+
+Model Binding & Validation--Model Binding (Simple Explanation)
+
+Model Binding in ASP.NET Core automatically converts incoming HTTP request data
+(JSON, query string, route values, form data)
+into C# objects, so you don’t manually parse anything.
+
+JWT Authentication / Authorization
+
+--Entity Framework Core (Code-first, Migrations, LINQ)
+
+EF Core is a lightweight, modern ORM (Object-Relational Mapper) for .NET.
+
+It allows you to work with a database using C# objects instead of writing raw SQL queries.
+
+Supports LINQ queries, change tracking, migrations, and more.
+
+--Repository Pattern
+-- Middleware and Logging
+Middleware is software that sits in the HTTP request pipeline and can process 
+requests and responses.
+
+Think of it as a series of steps that every request goes through before reaching 
+your controller, and every response goes through before 
+returning to the client.
+
+Examples: authentication, authorization, logging, exception handling, CORS, compression.
+
+
+--Error Handling and HTTP status codes
+Code	Meaning	Example Usage
+200 OK	Request succeeded	Returning a list of items
+201 Created	Resource successfully created	After a POST request creating a new record
+204 No Content	Request succeeded but no content to return	DELETE request successful
+400 Bad Request	Client sent invalid data	Invalid JSON or missing required fields
+401 Unauthorized	Authentication required / failed	User not logged in or invalid token
+403 Forbidden	Authenticated but not allowed	User doesn’t have permission
+404 Not Found	Resource does not exist	Requested item ID not found
+500 Internal Server Error
+
+globale error handlers in middelware
+Describe it as “a centralized place to catch all unhandled errors, log them, and return a consistent response”.
+
+Mention it improves maintainability and security, as raw exceptions are not exposed to the client.
+How:Middleware intercepts the request before it reaches the controller.
+
+The middleware wraps the request pipeline in a try-catch.
+
+If any exception occurs:
+
+Logs the exception.
+
+Sets the appropriate HTTP status code.
+
+Returns a structured error response to the client.
+
+
+✅ 3. Integration Topics (Frontend + Backend)
+You must know how Angular and .NET Core work together:
+
+Calling .NET APIs from Angular using HttpClient
+
+Handling JSON responses
+
+CORS setup in ASP.NET Core
+
+Token-based authentication with Angular + .NET (JWT)
+
+Uploading files
+
+Securing routes in Angular based on backend roles/claims
+
+✅ 4. SQL & Database
+Writing SQL queries (SELECT, JOIN, INSERT, etc.)
+
+Basic understanding of stored procedures and indexing
+
+EF Core query translation to SQL
+
+✅ 5. Project/Application Knowledge
+Be ready to explain:
+
+What project you built (end-to-end flow)
+
+Tech stack and architecture
+
+Challenges you faced & how you solved them
+
+How frontend talks to backend (API endpoints, services)
+
+Any authentication/authorization implementation
+
+Your role: what exactly you did (coding, designing, testing)
+
+✅ 6. Soft Skills & Mindset
+Problem-solving approach
+
+Willingness to learn & adapt
+
+Team collaboration
+
+Understanding of Agile/Scrum
+
+Communication skills (clear, structured answers)

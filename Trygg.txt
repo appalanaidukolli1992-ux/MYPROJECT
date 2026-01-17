@@ -1,0 +1,24 @@
+Trygg
+
+¨1. diff btn static and public
+can you we use private constructor?
+can we create object for interface?
+types of collections?
+how can you authorize weather particular user is valida or not?
+before calling controller?
+how do you set up this in what file younlll write the logic
+
+if u need to impliment JWT where do you impliement? which file?
+steps?
+exceptions, loggs how u ll write?
+where do you, in which file format, any extecntions u use?
+explain MVC architecture
+singleton pattern
+dependecy injection? how do u implimnet? which class? more details
+loosely couple architecture what is the relation.
+when you want to optimize a query in db what steps do you follow
+middleware, 
+
+routing? 
+
+

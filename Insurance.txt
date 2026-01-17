@@ -1,0 +1,510 @@
+TRYGG BA
+Insurance Fundamentals.
+-----
+insurance is defined as a legally binding contract (an insurance policy) between 
+two parties: the insurer (insurance company) and the insured (policyholder
+
+ It serves as a form of risk management where an individual or business transfers 
+the potential financial burden of uncertain future losses to the insurer in 
+exchange for a fee called a premium.
+
+Core Components
+Insurer (Provider): The company that evaluates risks, collects premiums, and is 
+responsible for providing financial coverage if a covered event occurs.
+
+Insured (Policyholder): The entity covered by the policy who pays a relatively 
+small, known cost (premium) to avoid a potentially large, unknown financial loss.
+
+Premium: The amount paid periodically (monthly, annually) to maintain the 
+insurance coverage.
+
+Claim: A formal request made by the insured to the insurer for compensation when 
+a covered loss happens.
+
+Deductible: The out-of-pocket amount the policyholder must pay before the 
+insurance company pays for a claim
+
+
+-----------------
+principles f insurence
+
+Risk awareness & assestment,Risk,risk management,insurance,fundamentals
+
+3 stpes aware what is the risk, assest, then take action 
+
+
+Insurance is the a way or form of risk management. 
+where you(insured) trasfering the risk  to another party(insurarer) in 
+compestation of premium
+where insurere company provides the coverage of insured.
+
+insured(policy holder)
+
+-------------------------------------------------------
+Insurance Domain – Overall Business Flow
+
+1. Product development & Risk Assessment
+Insurer identifies insurable risks and designs products.
+Defines:
+
+Coverage
+
+Premium
+
+Policy terms and conditions
+
+Exclusions
+...
+Key Terms
+
+Risk – Possibility of loss
+
+Coverage – Protection provided by the policy
+
+Exclusion – What is not covered
+
+Sum Insured – Maximum payout
+...'
+2. Sales & Distribution
+
+Policies sold via:
+
+Agents
+
+Brokers
+
+Bancassurance
+
+Online portals
+..Key Terms
+
+Proposal Form – Customer application
+
+Quotation – Price offered
+
+Underwriting – Risk evaluation process
+
+3. Underwriting & Policy Issuance
+
+The insurer evaluates the risk. They may accept, reject, or
+ modify the terms (add 
+"riders" or "endorsements").
+
+Decision:
+
+Accept
+
+Accept with conditions
+
+Reject
+
+Key Terms
+
+Underwriter
+
+Premium – Amount paid by customer
+
+Policy Issuance – Policy creation
+
+Endorsement – Policy modification
+..
+4. Policy Administration
+Managing changes like address updates, renewals, or cancellations through a 
+Policy Administration System (PAS) like Guidewire or Duck Creek.
+Handles:
+
+Renewals
+
+Endorsements
+
+Cancellations
+
+Premium collection
+
+Key Terms
+
+Policy Term
+
+Renewal
+
+Grace Period
+
+Lapse
+..
+5. Claims Management
+
+Triggered when insured event occurs.
+
+Core responsibility of insurer.
+
+Key Terms
+
+Claim
+
+Loss Event
+
+Deductible / Excess
+
+Indemnity-is the principle where an insurer agrees to compensate the policyholder 
+for covered financial losses(to recover from loss)
+..
+6. Reinsurance
+
+Insurer transfers part of risk to reinsurer.
+Reinsurance is insurance for insurance companies.
+
+Key Terms
+
+Reinsurance
+
+Ceding Company
+
+Treaty / Facultative Reinsurance
+--------------------------------------------
+
+Key terminologies:
+1. Proposal Form
+A formal application submitted by the customer containing personal, asset, and 
+risk-related details.
+
+2. Underwriting
+
+Definition:
+The process of evaluating risk to decide policy acceptance, premium, and conditions.
+
+3. Sum Insured -The maximum amount payable by the insurer for a covered loss.
+4. Premium -The price paid by the policyholder to transfer risk to the insurer.
+5. Policy Term:Duration for which the policy is valid.
+6. Endorsement:Any modification made to an active policy.
+7. Deductible :The portion of claim amount that the customer must pay before insurer
+ liability begins.
+ 8. Exclusion:Specific situations or conditions not covered under the policy.
+ 9. FNOL (First Notice of Loss):The first communication to the insurer about a 
+ loss event.
+ ------------------------
+ Q9. What role does a Business Analyst play in insurance flow?
+
+Answer:
+A BA translates insurance business rules into system requirements, defines 
+workflows, validation rules, exception handling, and supports UAT with real-world 
+scenarios.
+----------
+Q10. What is the difference between coverage and sum insured?
+
+Answer:
+Coverage defines what risks are insured, while sum insured defines how much the 
+insurer will pay.
+------------------------------------------------
+Risk Awareness
+
+Definition:
+Understanding potential events that may cause financial or operational loss to 
+an individual or organization.
+-----
+Risk Assessment
+techinques:
+“In insurance, risk assessment is done using historical data analysis, actuarial 
+models, probability–impact matrices, scenario analysis, and fraud scoring 
+techniques. These methods help insurers evaluate underwriting, claims, 
+operational, and regulatory risks and apply appropriate controls.
+
+Definition:
+The systematic process of identifying, analyzing, and evaluating risks to 
+determine their likelihood and impact.
+
+Example:
+An insurer assesses accident frequency and repair costs before offering motor 
+insurance.
+-------------------------
+2. Process of Evaluating Risk (Risk Evaluation)
+Step 1: Risk Identification-Recognizing potential loss-causing events.
+Step 2: Risk Analysis-Measuring the probability and severity of the identified 
+risk.
+Step 3: Risk Evaluation-Deciding whether the risk is acceptable, transferable, 
+or needs control.
+----------------
+3. Tools Used for Risk Evaluation
+Loss History Data -Past claim records used to predict future risk
+Risk Surveys -Physical inspection of assets
+Statistical Models
+Checklists
+---------------------
+RISK :
+uncertainty of the occurrence of an event that results in financial, physical, or 
+reputational loss.
+There is uncertainty whether a car accident will occur and how costly it will be.
+5. Five Types of Risk Attitudes
+risk avoider,risk  reducer, risk  retainer,risk sharer,risk taker
+--------------------
+types of risks:
+Insurance risks include underwriting, claims, fraud, operational, financial, 
+regulatory, reputational, strategic, market, catastrophic, and technology risks, 
+each impacting profitability, compliance, and customer trust
+Risk Management (RM)
+Definition
+
+Risk Management is the process of identifying, analyzing, controlling, and 
+financing risks to minimize losses.
+
+A company insures its assets and installs fire alarms.
+-----------------
+Who is a Risk Manager?
+
+A professional responsible for identifying and managing organizational risks.
+identify, aalysis,controllign
+-----------
+
+risk controller methods
+
+elimination,substitution,protetion,
+-------
+classifaiton of insirances-
+health,life,genral
+------------------
+
+risk components :
+uncertainity,probaibility, sevearity,peril,(cause of loss),
+hazard(condition that increases risk)
+--------------
+
+
+-----------
+
+Principles of insiracne:
+1. utmost good faith
+trust from both parties. disclosing all details
+
+2. insurable interest : financial intersert to insure assest
+
+3. indemnity : compensatrion equals actula loss.
+-----------------------------------------
+-----------------------------
+
+Calim process E2E:
+Loss Event
+   ↓
+FNOL (Claim Intimation)
+   ↓
+Claim Registration
+   ↓
+Coverage & Policy Validation
+   ↓
+Document Collection
+   ↓
+Assessment / Investigation
+   ↓
+Claim Decision
+   ↓
+Settlement (Cashless / Reimbursement)
+   ↓
+Claim Closure
+...
+D. Claims Process – Detailed BA View
+1. FNOL (First Notice of Loss)
+
+Triggered by customer/agent/hospital
+
+BA focus:
+
+Capture date, time, location
+
+Policy number validation
+
+SLA start time
+--
+2. Claim Registration
+
+Claim ID generated
+
+Policy active check
+
+Validations
+
+Policy period
+
+Coverage applicability
+
+Waiting period
+
+Deductible
+..3. Document Management
+
+Manual / digital upload
+
+BA focus:
+
+Mandatory vs optional docs
+
+Rework scenarios
+
+Missing document reminders
+....
+4. Claim Assessment
+
+Amount calculation
+
+Fraud checks
+
+Surveyor appointment (motor/property)
+..
+5. Claim Decision
+
+Approved
+
+Partially Approved
+
+Rejected (Repudiated)
+..
+6. Settlement
+
+Cashless (hospital/garage)
+
+Reimbursement (customer)
+..
+7. Closure
+
+Claim closed
+
+Notifications sent
+
+Data stored for audit
+------------------------------------
+
+
+2. Uncertainty Level of Risk
+
+low uncertainity risk - more happend less losess
+high uncertainity risk.- earthquake
+
+----------------------------
+
+3- risk sharing & pooling
+
+distirbute risk among multiple parties
+
+combinign similiar risks to predict losses accurately,,
+
+Key Concept:
+Premiums from many pay losses of few.
+-----------------------------
+dual insurance & self insurance
+dual : wife and husband having policies privided my company. but total claim among
+should not exceed actual loss cost. helps to cover extra costsm deducabls
+self- keep some amout aside to covr loss in furture no, policy,
+retaining the risk
+--------------
+special isnuracne types:
+engineering insuracne,liability insurance, health, motor,
+-------------
+8. Pecuniary Insurance
+Insurance that compensates financial loss rather than physical damage.
+Loss of profit insurance
+frauds
+----------------
+
+packaged policies:
+-------------
+End-to-End Claims Lifecycle
+1. Intake: First Notice of Loss (FNOL)
+The process begins when a policyholder reports an incident. In 2026, this is 
+increasingly done through digital FNOL channels like mobile apps, chatbots, or 
+self-service portals rather than traditional phone calls. 
+BA Focus: Ensure the system captures critical data (date, time, location, 
+photos/videos) and validates policy details "on the fly" to reduce manual 
+re-keying. 
+2. Triage & Assignment
+Once submitted, a workflow engine routes the claim based on predefined business 
+rules. Simple claims (like a windshield repair) may trigger Straight-Through 
+Processing (STP), while complex ones are assigned to a human adjuster based on 
+expertise or location. 
+BA Focus: Document the logic for "Segmentation & Assignment" to ensure claims go 
+to the right department. 
+3. Verification & Adjudication
+The insurer verifies if the loss is covered under the active policy. 
+Policy Review: Checking deductibles, coverage limits, and exclusions.
+Fraud Detection: In 2026, AI-powered tools automatically flag "red flags" (e.g., 
+suspicious timing, inconsistent statements).
+Reserving: The system sets aside a "Claim Reserve"—estimated funds to cover the 
+future payout. 
+4. Investigation & Evaluation
+An adjuster investigates to determine the amount of loss. 
+Damage Assessment: May involve virtual appraisals, where photos/videos are 
+analyzed by AI or external experts (engineers/contractors).
+Liability: Identifying at-fault parties and witness information. 
+5. Settlement & Payment
+Once the claim is approved, the final settlement amount is calculated based on 
+policy coverage minus any applicable deductibles. 
+Payout: Payment is issued via digital channels to the policyholder or a preferred 
+vendor (repair shop).
+BA Focus: Tracking "Claim Settlement Cycle Time" to ensure the insurer meets 
+agreed-upon timelines. 
+6. Recovery & Closure
+If a third party was at fault, the insurer may initiate Subrogation to recover 
+costs from that party's insurer. Once all payments and recoveries are complete, 
+the claim is officially closed in the system. 
+-------------
+
+Subrogation: If someone else caused the accident, your insurer asks their insurer 
+to pay them back.
+
+.-----------
+
+types of insirance 
+life, health, vehicle(commericial auto, personal automobile),
+,general liability,property insurance,worker's compensation,
+profestionla liability,directors & officers insirance,
+-----------
+ Beneficiary is the individual (often in life insurance) who receives the payout 
+when a claim occurs, with roles sometimes overlapping but often distinct.
+-------------------
+Risk Management Techniques? in insurance domain
+In insurance, risk management involves identifying, assessing, controlling, 
+financing, and monitoring potential threats to capital and earnings, using 
+techniques like avoidance, reduction (mitigation), transfer (reinsurance), 
+retention, and sharing, enhanced by modeling, data analytics, diversification, 
+and technology (AI, RPA) for accurate pricing, fraud detection, and regulatory 
+compliance
+------------------------
+Key Techniques & Strategies
+Avoidance: Not engaging in risky activities (e.g., refusing to underwrite certain 
+high-risk policies).
+Reduction/Loss Prevention: Implementing measures to lower frequency/severity 
+(e.g., safety programs, better underwriting).
+Transfer: Shifting risk to others, primarily through Reinsurance (insuring the 
+insurers) or specific policies (cyber insurance).
+Retention: Accepting and funding smaller, predictable losses (self-insurance, 
+reserves).
+Sharing: Spreading risk among many policyholders (diversification) or partners.
+Diversification: Spreading investments and insured risks across various sectors 
+to lessen volatility. 
+----------------------
+Adverse Selection?
+smoked people more likely buy insurance..
+high risk people
+------
+Technology revolutionizes insurance by using AI, IoT, and data analytics for 
+hyper-personalized pricing, faster claims (fraud detection), better risk 
+assessment (telematics), streamlined operations, and new distribution via mobile, 
+creating more efficient, customer-centric, and data-driven insurance models, 
+known as InsurTech, from underwriting to payouts. 
+
+-----------------
+
+claim lifecycle
+1. claim intake
+2. segmentation- devide eeasy one, complex one
+3.assisnment- team come into place to start process
+4.adjudication-investogation, loss assestment
+5.payments
+6.recovery- salvage,subrogation
+7.Litigation
+
+
+ 
+
+
+
+
+ 
+
+

@@ -1,0 +1,61 @@
+BA. behaviuoral question
+1. Tell me about a time you had conflicting requirements from stakeholders. How 
+did you handle it?
+
+Answer Structure (STAR):
+
+Situation: “In my last project, two departments wanted different reporting 
+formats for the same dashboard.”
+
+Task: “My job was to resolve the conflict and deliver a solution acceptable to 
+both.”
+
+Action: “I organized a joint workshop to understand both needs, prioritized 
+requirements based on business impact, and proposed a flexible solution 
+supporting both formats.”
+
+Result: “Both teams accepted the solution, and the dashboard was delivered on time
+----------------
+2. Describe a time you had to gather requirements from stakeholders who were not 
+clear about what they wanted.
+
+Answer:
+
+Situation: Stakeholders were unsure about workflow changes.
+
+Action: Conducted interviews, workshops, and observation sessions. Used mockups 
+and prototypes to validate understanding.
+
+Result: Clearly documented requirements, reducing rework during development.
+
+---------------------
+MVP stands for Minimum Viable Product
+he simplest version of a product with just enough features to satisfy early 
+customers, test core assumptions, and gather validated learning for future 
+development'
+----------------
+3. Tell me about a challenging project and how you ensured it stayed on track.
+
+Answer:
+
+Situation: Tight deadline for implementing a CRM system.
+
+Action: Broke down requirements into MVP features, prioritized using MoSCoW, 
+coordinated daily stand-ups, and updated stakeholders weekly.
+
+Result: Project delivered on schedule with key functionalities deployed 
+successfully.
+------------------------
+4. How do you handle changes in requirements mid-project?
+
+Answer:
+
+Situation: During development, client requested additional features.
+
+Action: Assessed impact on timeline, resources, and dependencies. Updated Product 
+Backlog and discussed trade-offs with stakeholders.
+
+Result: Only critical changes were implemented in the current sprint, others 
+scheduled for future releases, maintaining project stability.
+
+--------------------

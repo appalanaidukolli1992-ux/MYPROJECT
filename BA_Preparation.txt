@@ -1,0 +1,142 @@
+BA preparation:
+
+understading bigger goal.
+engagewith stackholders
+identifty key stackholders, in raci matrix
+4. interviews, worksshops, drill dwon deeper into what needs to be acaived,
+5. alugn eveyrine, what is agreed.
+
+6.then as final output
+generate artcifacts(formal documetns brds, deliverables),er models,
+business process flow diagram, activity diagrams(uml) flow of activty  or proceeses
+, techincal expectaion,contextual model, integrations, intercations with suystems
+major parties, 
+
+we use draw.io., visio,miro
+
+7. practucal implimentations
+8. sprint plannings(writing epics, stories,backlogs,sprints)
+9. story Map :A story map (or user story map) is a visual planning tool used in 
+Agile projects to organize user stories based on user activities and goals. It 
+shows what users do, in what order, and which features deliver value first.
+ Break down features into meaningful stories
+ 
+ 11.Story map = WHAT users need and WHEN
+
+Solution map = HOW the solution delivers it
+
+12. prioritization by aligning with PO
+
+13. differencet cermonies
+14. story prioritization techinques :built first based on value, risk, cost, and 
+dependencies.
+Moscow - must have showuld have could have wont have
+value vs effort
+story mapping, cost of delay
+based team velocity, sprints will be pallned with stories
+
+writing DOD, Defition of ready
+
+A RACI matrix is a responsibility assignment tool used to clearly define roles and responsibilities for tasks or deliverables in a project.
+
+RACI Meaning
+
+R – Responsible: Performs the work
+
+A – Accountable: Owns the outcome and approves the work (only one per task)
+
+C – Consulted: Provides input or expertise
+
+I – Informed: Kept updated on progress
+| Task                | BA | Dev | QA | PO |
+| ------------------- | -- | --- | -- | -- |
+| Gather requirements | R  | I   | I  | A  |
+| Develop feature     | I  | R   | I  | A  |
+| Testing             | I  | C   | R  | A  |
+
+15. backlog refinement
+16. sprint plannign
+17. daily scrum
+18.sprint review- demo
+19. retrispective
+
+o/p of each spritn is called PI(product increament)
+take feedback from stckalders.
+bild priorities, next sprint
+
+
+generall documentation normal orginxational confleunce ,
+brd customization based on project
+-------------------
+
+Scrum ceremonies are time-boxed events in Scrum that provide structure for planning, execution, review, and improvement of work in each sprint.
+
+Scrum Ceremonies Explained
+
+1. Sprint Planning
+
+Purpose: Decide what to build and how to build it
+
+Participants: Product Owner, Scrum Master, Development Team
+
+Output: Sprint Goal and Sprint Backlog
+
+Time-box: Up to 8 hours for a 1-month sprint
+
+2. Daily Scrum (Daily Stand-up)
+
+Purpose: Synchronize team and plan next 24 hours
+
+Focus:
+
+What was done yesterday?
+
+What will be done today?
+
+Any blockers?
+
+Participants: Development Team (Scrum Master facilitates)
+
+Time-box: 15 minutes
+
+3. Sprint Review
+
+Purpose: Inspect the increment and gather feedback
+
+Participants: Scrum Team + stakeholders
+
+Output: Updated Product Backlog
+
+Time-box: Up to 4 hours for a 1-month sprint
+
+4. Sprint Retrospective
+
+Purpose: Improve process, collaboration, and quality
+
+Participants: Scrum Team only
+
+Output: Action items for improvement
+
+Time-box: Up to 3 hours for a 1-month sprint
+-----------
+
+back log refinement:
+Backlog refinement (also called backlog grooming) is an ongoing activity, not an 
+official Scrum ceremony, but it is critical for keeping the Product Backlog ready 
+for future sprints.
+When It Happens
+
+Regularly during the sprint (typically once or twice per sprint)
+
+Purpose
+
+Break large items (epics) into smaller, actionable stories
+
+Clarify requirements and acceptance criteria
+
+Estimate effort for backlog items
+
+Re-prioritize based on business value, dependencies, or new information
+
+----------
+
