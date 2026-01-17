@@ -1,0 +1,191 @@
+1. What is data binding in Angular?
+Data binding is one of the most significant and effective elements for creating communication
+ between the DOM and the component. It makes designing interactive apps easier by reducing the
+ need to worry about data pushing and pulling between the component and the template.
+ There are Four types of Data binding in Angular: 
+
+Property Binding
+Event Binding
+String Interpolation
+Two way data binding
+
+--
+ Interpolation ({{ }})
+ // app.component.ts
+export class AppComponent {
+  title = 'Hello Angular!';
+}
+html
+
+<!-- app.component.html -->
+<h1>{{ title }}</h1>
+
+--
+ Property Binding [property]
+Used to bind DOM properties to component variables.
+
+Example:
+
+typescript
+Copy
+Edit
+// app.component.ts
+export class AppComponent {
+  imageUrl = 'https://angular.io/assets/images/logos/angular/angular.png';
+}
+html
+Copy
+Edit
+<!-- app.component.html -->
+<img [src]="imageUrl" alt="Angular Logo">
+
+--
+event bingin
+define increment event funtio n in componet
+
+
+<!-- app.component.html -->
+<button (click)="increment()">Click Me</button>
+<p>Clicked {{ count }} times</p>
+
+----
+-------------------------------------------------
+2. What is Two-Way Data Binding in Angular?
+Two-way data binding means that data flows in both directions:
+
+From the component to the template (view).
+
+From the template (user input) back to the component.
+
+This is commonly used in form fields where you want to both display and update a value in real-time.
+How It Works
+Angular uses the [(ngModel)] directive to enable two-way binding. Under the hood, it’s a shorthand for combining:
+
+Property binding: [value]="..." (data → view)
+
+Event binding: (input)="..." (view → data)
+<input [(ngModel)]="username">
+<input [value]="username" (input)="username = $event.target.value">
+🧪 Example
+Step 1: Import FormsModule
+In app.module.ts:
+
+ts
+Copy
+Edit
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [ BrowserModule, FormsModule ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule {}
+Step 2: Component Code
+ts
+Copy
+Edit
+// app.component.ts
+export class AppComponent {
+  username: string = '';
+}
+Step 3: Template Code
+html
+Copy
+Edit
+<!-- app.component.html -->
+<input [(ngModel)]="username" placeholder="Enter your name">
+<p>Hello, {{ username }}!</p>
+✅ What Happens:
+User types something in the input field.
+
+ngModel automatically updates the username property.
+-------------------------------------------------------------------
+
+3.Annotations in Angular are metadata markers attached to classes using decorators 
+(like @Component, @NgModule) to tell Angular how to process the class
+@Component({
+  selector: 'app-hello',
+  template: '<h1>Hello</h1>'
+})
+export class HelloComponent {}
+
+Here, @Component is an annotation that tells Angular this class is a component and provides its metadata.
+
+In short: Annotations configure and decorate Angular classes so the framework knows what to do with them.
+
+-----------------------
+
+4. PIPES
+Pipes in Angular are used to transform data in the template.
+
+{{ value | pipeName:arg1:arg2 }}
+
+Common Built-in Pipes:
+uppercase – Converts to UPPERCASE
+
+date – Formats a date
+
+currency – Formats currency
+
+json – Converts object to JSON string
+
+🔹 Custom Pipe Example:
+ts
+Copy
+Edit
+@Pipe({ name: 'reverse' })
+export class ReversePipe implements PipeTransform {
+  transform(value: string): string {
+    return value.split('').reverse().join('');
+  }
+}
+Usage:
+
+html
+Copy
+Edit
+{{ 'Angular' | reverse }}  <!-- Output: ralugnA -->
+In short: Pipes format data for display, like filters in AngularJS.
+
+pure.staeless, impure stateful
+
+-------------------------
+
+6. ChatGPT said:
+✅ Dependency Injection (DI) in Angular – Crisp Explanation
+Dependency Injection is a design pattern where Angular provides required services or objects to a class, instead of the class creating them.
+
+Why Use DI?
+Promotes loose coupling
+
+Improves testability and code reusability
+🔧 Example
+1. Create a Service
+ts
+
+@Injectable({ providedIn: 'root' })
+export class LogService {
+  log(msg: string) {
+    console.log('LOG:', msg);
+  }
+}
+2. Inject into a Component
+ts
+Copy
+Edit
+@Component({...})
+export class AppComponent {
+  constructor(private logService: LogService) {}
+
+  ngOnInit() {
+    this.logService.log('App Loaded');
+  }
+}
+In short:
+Angular DI automatically injects services into components or other services when needed,
+ using constructors.
+
+Angular DI automatically injects services into components or other services when needed, using constructors.
+--------------
+

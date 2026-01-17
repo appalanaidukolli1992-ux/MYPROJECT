@@ -1,0 +1,108 @@
+asnwer this question by taking reference from best practises and carrier guidance websites like indeed and taking inputs from below and answer.
+We are looking for a curious and self-driven Business Analyst to join our Supply Planning Unit. In this role, you will lead analytics initiatives and maintain and develop systems for all three Reverse Supply areas (External Exit and overstock selling, faulty items and garment collection). You’ll play a key part in the team in helping unwanted garments get a new life, and ensure the garments end up in the right place! As a proactive self-starter, you will take ownership of projects from hypothesis to insight and delivery, thrive on ambiguity, ask the right questions, and challenge the status quo. This position requires a blend of business acumen and analytical skills.
+
+Your key responsibilities include: 
+
+Lead analytics initiatives from hypothesis to delivery, turning data into actionable insights.
+Own and develop internal applications supporting overstock sales and partner management.
+Use SQL and Power BI to gather, clean, and visualize data. 
+Develop and maintain web-based applications, hence exposure to C#, JavaScript, and PowerApps or similar languages and programs are required.
+Maintain and follow-up on sustainability KPIs for business development and public disclosure.
+Act as the go-to person for data and application-related questions and incidents
+Drive automation and data validation in areas with manual processes.
+Collaborate cross-functionally within Supply Planning and across H&M Group.
+
+
+Who You Are 
+
+Just like everyone at H&M, we believe you are a business-minded, open, communicative, and ambitious team player full of drive and optimism. You have a robust analytical ability, business acumen, self-drive with an eye for change and improvement opportunities. 
+
+We are looking for people with 
+
+Minimum 3 years of experience in a data-driven role within supply chain operations, ideally in overstock handling, returns management, or circular fashion initiatives.
+Proven hands-on experience with SQL for querying large datasets, and Power BI for building dashboards and visualizing KPIs. Experience with Python or other programming language for automation, C# for application logic, and JavaScript for web-application development is needed.
+Experience with Power Automate for workflow optimization is a strong plus.
+Some experience from working with Cloud Platforms and maintaining web-based applications, especially in the context of internal business applications and data pipelines
+
+
+And people who are
+
+Strong communicators and storytellers with the skills and ability to communicate and explain data and its implications to various different stakeholders. 
+Curious and take the initiative, driven to explore new ideas, ask questions, and take ownership from start to finish 
+Based in Stockholm and able to commute to the office 4 days/week (no relocation support).
+
+
+This is a permanent position starting as soon as possible and you will report to Julia Lindberg, Reverse Supply Manager within Supply Planning. 
+
+Apply by sending in your CV and English as soon as possible. Due to data policies, we only accept applications through our career page. 
+
+Who We Are
+
+H&M Group is a global company of strong fashion brands and ventures. Our goal is to prove that there is no compromise between exceptional design, affordable prices, and sustainable solutions. We want to liberate fashion for the many, and our customers are at the heart of every decision we make. 
+
+We are made up of thousands of passionate and talented colleagues united by our shared culture and values. Together, we want to use our power, our scale, and our knowledge to push the fashion industry towards a more inclusive and sustainable future. 
+my profile :Internal
+Appala naidu Kolli MCA | Business Analyst | Data Analyst | DevOps Engineer | GS1 Standards
+Email: appalanaidukolli1992@gmail.com Mobile: +46-764337018 Address: Malmö, Sweden
+PROFILE SUMMARY
+ Analytics-driven Business Analyst and Data Analyst with 3 years of experience supporting IKEA's supply chain transformation through GS1 standards integration. Skilled in extracting and analyzing data from key business systems to deliver actionable insights, visualizations, and decision-support documentation with a strong focus on automation and sustainability KPIs. Adept at mapping IKEA product data to GS1 GDSN standards, investigating business areas, and translating complex requirements into clear, stakeholder-ready outputs. Possesses strong analytical ability and business acumen driving data-driven decisions in supply chain operations.
+ Technically adept DevOps Engineer and SLA Lead with 6 years of experience managing production support for 40+ IKEA business applications. Proven expertise in incident and problem management, enhancements, and end-to-end application maintenance using technologies like PL/SQL, PostgreSQL, .NET, Angular, and Agile methodologies. Progressed from support analyst to offshore team lead, and later onsite DevOps Lead, responsible for SLA adherence, seamless deployments, and ensuring high system availability. Trusted front-face for client interactions, delivering stable, scalable, and business-aligned solutions. A self-starter committed to driving automation and workflow optimization.
+EDUCATION
+ MCA (Master of Computer Applications) from Andhra University, Visakhapatnam, in 2016.
+CERTIFICATIONS
+ BDA Introduction to Business Analysis Foundation(Udemy)
+ Certified Scrum Master
+ Digital : Dot Net Full Stack Developer with Angular Specialization
+ Technology : Generative AI Foundation Curriculum
+ Oracle database 12c : PLSQL Certification
+ Retail : Foundation Certificate in Retail Operations
+CORE COMPETENCIES
+ Data Analysis & Visualization (Power BI, PL/SQL,Python,MS Excel-Advanced)
+ Business Analysis,Documentation,Requirement Gathering ,Stakeholder Engagement
+ GS1 Standards Integration & GDSN Mapping
+ Sustainability & Circular Supply Initiatives
+ Automation & Workflow Optimization: Power Automate, DevOps, CI/CD (Azure DevOps, Jenkins)
+ Agile Methodologies (Scrum, Kanban, SAFe)
+ Cross-Functional Team Collaboration
+ DevOps Practices & Production Support
+ Incident & Problem Management(Service Now,C#,.Net,Angular,Plsql,Postgre Sql)
+ Application Development & Deployment
+ Supply Chain Operations & Business Development
+TECHNICAL PROFICIENCIES
+ Programming_languages: C#.Net, API, Angular, Python, SQL, C#, JavaScript, Julia
+ Visualization tools : Power BI
+ Database Technologies: Oracle, MongoDB, Postgres DB
+ Agile Tools: JIRA, Confluence,Git
+ CI/CD : Jenkins, Azure DevOps
+ BI & Analytics: Power BI, SQL,Excel-advanced,
+ Design & Collaboration: Visio, Figma, Miro
+ Others tools: ER Studio,Service Now,Splunk,Cathpoint
+WORK EXPERIENCE
+TCS Sverige || Since Jan 2023 || Älmhult
+Business Analyst / Data Analyst || IKEA || Supply Chain Development
+ Led maturity assessments and impact analyses to integrate GS1 identifiers and standards into IKEA's digital ecosystem, contributing to supply chain operations.
+ Extracted and analyzed data from IKEA's key business databases using SQL and Python to uncover actionable insights, demonstrating strong analytical ability.
+ Created visualizations, charts, and structured documentation using Power BI and Python to support strategic decision-making and business development.
+ Assessed IKEA product master data against GS1 GDSN standards using SQL and ER/Studio, ensuring data integrity for business applications.
+Internal
+ Developed clear, structured documentation outlining business insights, decision points, and roadmap recommendations for stakeholder alignment, leveraging strong communication skills.
+ Collaborated with stakeholders to understand business requirements and translated them into data-driven analyses and strategic recommendations, showcasing business acumen.
+ Contributed to sustainability and circularity initiatives by investigating IKEA's value chain, exploring regulatory compliance, authority expectations, and the Digital Product Passport (DPP) journey.
+ Recognized as a top performer of the quarter for delivering actionable insights and strategic recommendations for GS1 GTIN initiation in Product Lifecycle Management systems.
+ Established scheduled Power Automate flows to automate the creation and distribution of weekly and monthly reports, driving workflow optimization and automation.
+WORK EXPERIENCE
+TCS Sverige || April 2017 – Jan 2023 || Älmhult & Chennai
+DevOps Engineer || IKEA
+ Led support and development for 40+ IKEA core business applications, ensuring SLA adherence and acting as the primary point of contact for stakeholders and cross-functional teams.
+ Managed incidents, problems, and change processes by resolving application issues, conducting root cause analysis (RCA), and implementing preventive measures. Developed, troubleshot, and resolved bugs across ASP.NET, .NET Core, PLSQL, and PostgreSQL-based business applications, ensuring a stable and optimized production environment.
+ Developed scalable microservices in C#/.NET Core with seamless Azure cloud integration, supporting application development.
+ Set up and managed application availability and health monitoring using Splunk, AppDynamics, and Catchpoint; developed performance dashboards and automated alerts to proactively identify issues and ensure optimal system reliability.
+ Developed a Service Request Engine to automate frequently raised user requests, resulting in significant lead time reduction and improved efficiency for end users, demonstrating automation and workflow optimization.
+ Recognized with the Contextual Master Award for proactively identifying a critical flaw in the application's recommended sale price calculation logic. Designed and implemented an automation solution that corrected the issue and prevented future occurrences, resulting in business savings of over 2 million. The initiative demonstrated strong analytical thinking, technical execution, and business impact.
+ Successfully led the migration of IKEA's largest database system from Oracle 12c to 19c, coordinating with over 20 cross-functional teams to plan and execute a seamless transition. Oversaw all phases of the migration including impact analysis, scheduling, testing, and deployment ensuring minimal disruption to business operations. Received client appreciation for delivering the project on time with high quality and operational stability.
+ Served as SLA Lead for a team of 7 members, overseeing daily operations, ensuring adherence to service level agreements, and driving incident resolution and change management processes. Coordinated task assignments, monitored KPIs, and acted as the primary liaison between technical team and stakeholders to ensure timely delivery and alignment with business expectations.
+Achievements
+ TCS AI Spark,TCS Innovation Awards – recognition for identifying an AI-driven business use case and proposing an effective solution approach.
+ On the spot award 2024,2023,2022,2017 – Awards for Excellence
+ Contextual master award – For a business-critical automation development.
+ PERSONAL DETAILS  Date of Birth: 15th May 1992  Languages Known: English, Telugu  Linked profile: https://www.linkedin.com/in/appalanaidu-kolli-791917249/

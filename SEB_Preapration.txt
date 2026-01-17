@@ -1,0 +1,250 @@
+SEB Client interview :
+DevOps;
+CICD
+-------------
+questions pending :
+1. what aunthentcation methos we useed? how does it works a little explantion
+encoding, decoding, API gateway, 
+2. testings, unit tests, intergration test, espeically with micro services
+CICD, Devops,github actions
+intregrated Devlopment and operations.
+1.Automation everywhere – Build, test, deploy, infra provisioning, monitoring.
+Continuous Integration & Continuous Deployment – Frequent merges, automated 
+pipelines.
+metrics, logs,traces,rrror tracking,
+Application security, what practise u use, data proctection,authencitcation, autheizarion
+
+
+---------
+nutshell
+
+in JIRA
+we PLAN the sprints, release,
+
+we will take code for latest version, to start coding from Git
+and start coding for release
+
+terraform
+recourse creatin n 
+doct
+uplocad articafcts to github
+again uploaded to azure
+
+.--------------------
+
+kubernaties
+cluster-node-pod
+1. Cluster
+
+A group of machines (nodes) managed by Kubernetes.
+Think: Your whole environment.
+
+2. Node
+
+A single machine (VM or physical) inside the cluster.
+Think: Like your Windows server, but usually Linux.
+
+3. Pod
+
+The smallest running unit. Contains one or more containers.
+Think: A small box running your app.
+
+4. Container
+
+Your application packaged with everything it needs.
+Think: Your app + runtime inside a mini environment.
+
+
+-- dockarizarion:
+creating docker image for your applciaiton
+Including all required dependencies (runtime, libraries, configs)
+Running that image as a container
+Instead of installing .NET, Node.js, IIS, libraries, configs manually on a server,
+you put everything your application needs inside a single portable box.
+
+That box = Docker container.
+------------------------
+
+Devops Steps:
+
+Developer writes code locally.
+
+git add + git commit → saves snapshot locally.
+
+git push → sends code to GitHub (remote repo).
+
+Jenkins detects changes in GitHub (via webhook).
+
+Jenkins pulls the code, builds it, runs tests.
+
+If everything passes, Jenkins deploys to server (Windows/IIS in your case).
+
+-----------------
+
+GIt, github
+Add → Commit → Push → Pull
+
+Add → staging
+
+Commit → snapshot
+
+Push → publish
+
+Pull → update
+
+
+------------
+Commands:
+git init
+
+Initialize a new Git repository in your project folder.
+
+Example: git init
+git clone <repo_url>
+
+Copy a remote GitHub repository to your local machine.
+
+Example: git clone https://github.com/user/project.git
+
+git status
+
+Shows which files are modified, staged, or untracked.
+
+Example: git status
+git add <file> or git add .
+
+Stage changes to prepare them for commit.
+
+Example: git add index.js or git add . (all files)
+git commit -m "message"
+
+Save a snapshot of staged changes with a message.
+
+Example: git commit -m "Fixed login bug"
+git log
+
+View the history of commits.
+
+Example: git log
+
+
+
+
+--------------------
+
+microservices
+Microservices is an architecture where the application is split into small, 
+independent services, each owning a single business capability and its own 
+database. Services communicate through APIs or messaging and can be built, 
+deployed, and scaled independently. This improves scalability, resilience, and 
+delivery speed, but requires good DevOps, monitoring, and careful handling of 
+distributed communication
+
+Microservices is an architectural style where an application is built as a 
+collection of small, independent services, each responsible for a specific 
+business capability.
+Each service runs independently, has its own codebase, its own database (or data 
+store), and communicates with other services using APIs or messaging
+
+benefits:
+indepedently operatable, deployable, maintaible, techology independetn,scalable.one fails other still works
+e.commerce, payment daila salso, othr ucntonaoties works'
+
+How thy communciate :
+Synchronous (API calls)
+
+REST, gRPC between services.
+
+Asynchronous (Messaging)
+
+Using Kafka, RabbitMQ, Azure Service Bus.
+
+Enables loose coupling.
+-------------------------
+2. How do you handle authentication between microservices?
+Answer
+
+Use token-based authentication, usually JWT, issued by a central identity 
+provider (Azure AD, Identity Server, Auth0).
+Each service validates the token using its public key.
+
+Example
+
+Client authenticates with Identity Provider and receives JWT.
+
+Client calls API Gateway → JWT forwarded to microservices.
+
+Services verify token signature + roles + permissions before processing.
+-----------------
+Authenrization
+
+JWT token contains signature, claim, and roles/permsision swill be encoded in it, 
+based the rolescleint will autherize and allow to use the particular reosurse.
+--------------
+Security:
+API Gateway
+Http, JWT authention, Secrets stored in azure keyvaluot, or endocded format
+
+All microservices access DB connection strings from Azure Key Vault.
+
+Every service uses HTTPS + certificate pinning.
+
+Gateway applies rate limiting to public APIs: 1000 req/min per user.
+-------------------
+
+Loose couple ing min micsroservcies
+Well defined API contracts
+avoid shared codes, libraries
+Dependecny inversion,Abstraction
+containirizaiton, deploy indeviudally so that it can scablble and maintainbe 
+seperately with out dependecnt
+
+-----------------
+Montoring 
+App insights, splunk,app dynamics, catch point
+---------
+8. How do you deploy microservices?
+Explanation
+
+Microservices are packaged as Docker images and managed by Kubernetes.
+Kubernetes provides:
+
+Auto-scaling
+
+Self-healing
+
+Load balancing
+
+Config management
+
+Example
+
+Order Service:
+
+Build Docker image → Push to registry → Kubernetes deploys 5 replicas
+
+Inventory Service only needs 2 replicas → separate scaling
+
+---------------------------
+Kuberbates nutshell:
+open source orchastration platform
+cluster is gourp os nodes to run containerized applciaitons
+Cluster-worker nodes- Node-Pod-container
+Control plane is UI pane, to managing the cluster
+controller manager, scheduler,
+PODs-smallest deployable units inK8s
+
+
+Docker
+next level of VMs
+1 os multiples apps can be runs, more space saving
+app code->Image->Resgistery(server/where application runs)-> containers starts
+
+each docker will have multiple containers
+
+When we want to deal / manages with 100s of containers in , then there kunbernates K8s comes
+ it ll manage orchastarte u r containers
+ you ll give instructions to it, like
+ this is how my containers shud works, in my clusters 
+ it handles computes, load balnacing,delete, balcnes, starts,schedulde, scalling,
+ 

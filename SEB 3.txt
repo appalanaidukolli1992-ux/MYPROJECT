@@ -1,0 +1,232 @@
+SEB 3
+-------
+ACID is an acronym for four key properties of database transactions: Atomicity, 
+Consistency, Isolation, and Durability. These principles ensure that database 
+operations are processed reliably, maintaining data integrity and reliability, 
+even in the event of system failures or concurrent access
+
+Atomicity : until entire trasactions compltes no chnages are saved permenealy
+consistancy: you cannot break the predefined rules, for exmaple bank balance should nto in neegetive,
+if u r trying entire u r operations stopsand rolles back.
+isolation : even though mulitple concurrent transaction happenign on tables, 
+it ll be handled in sequenticla way.
+Durability : once commit changes, it ll stored in non-volatile storega estores perminetly.
+
+-------------------
+Mongo DB
+IDE : mongo DB compass
+document based database
+data is saved documeted format, in Bson Bitjson
+
+tables-collections
+create syntax. ->db.users.insertone({name :"John"})
+select qiery : -> db.users.find()
+we use .agrregate for joins, relations
+refrencing(normal) : we use $lookup,$group kind of 
+embedding(denormal) : inside same query inlcude all attirbutes.
+
+--------- Overal application security, authencittion, autherizarion.--
+Authentication & Authorization
+
+Use OAuth2 / OpenID Connect with centralized Identity Provider
+(Azure AD, Auth0, Keycloak, IdentityServer).
+
+All requests validated using JWT tokens.
+
+Use role-based and policy-based authorization in APIs.
+
+2. API Security
+
+Enforce HTTPS/TLS everywhere.
+Add rate limiting and IP restrictions at API Gateway.
+Use input validation, model validation, and anti-CSRF tokens.
+
+3. Secure DevOps / CI-CD (DevSecOps)
+
+Static code analysis → SonarQube, Snyk
+
+Dependency scanning → GitHub Dependabot
+
+Secrets scanning → GitHub Secret Scanner
+
+Vulnerability checks before deployment
+
+Block production deployment on security failures
+
+4. Secrets Management
+
+Never store passwords or secrets in:
+
+code
+
+config files
+
+GitHub
+
+Use:
+
+Azure Key Vault
+
+Kubernetes Secrets
+
+AWS Parameter Store
+
+..
+CORS is the mechanism that allows one website to get data from a different 
+website only if the second website explicitly permits it. Without it, almost all 
+modern web interactions would be impossible due to security restrictions.
+
+4.Secure Configuration & Hardening
+
+Disable unnecessary ports
+
+Use CORS properly
+
+Set secure headers
+
+Follow least privilege for service accounts
+..
+Transport Layer Security (TLS) is a crucial security protocol that creates a 
+private, encrypted channel for communication over the internet. It's the "S" in 
+HTTPS, ensuring that data transferred between your browser (the client) and a 
+website's server cannot be eavesdropped on, tampered with, or forged by third 
+parties
+..
+6. Data Protection
+
+Encrypt data in-transit (TLS)
+
+Encrypt data at-rest (Azure SQL TDE, MongoDB encryption)
+
+Mask sensitive fields in logs
+SQL Injection protection via parameterized queries
+8
+API Gateway + Firewall Protection
+
+Use WAF (Azure Application Gateway WAF)
+
+Block malicious IPs
+
+Add rate limiting and throttling
+
+Example:
+
+Only allow 100 calls per minute per user
+
+Vulnarable scans in docker images or in CI CD pipless, 
+-------------------------------------------
+
+. Logging, Monitoring & Intrusion Detection
+
+Centralized logging (ELK, Azure Monitor)
+
+Distributed tracing (OpenTelemetry)
+
+Alerting for unusual behavior (failed logins, spikes)
+
+I follow a layered security approach. Authentication and authorization use 
+OAuth2/OIDC with JWT tokens. APIs run over HTTPS, protected with rate limiting 
+and secure headers. Secrets are stored in Azure Key Vault or Kubernetes Secrets, 
+never in code. I enforce secure coding (validation, parameterized queries), 
+dependency scanning, static analysis, and image scanning in CI/CD. Databases are 
+encrypted and access is least-privilege. API Gateway and WAF add additional 
+protection. Logging and monitoring systems detect security events. Overall, I 
+apply DevSecOps practices throughout development, build, and deployment
+------------------------------------
+---------------------------
+Common attacks & prevention actions
+1. DDoS / API Flooding Attack
+What happens
+
+Attackers flood your API or microservices with millions of requests to:
+
+Crash services
+
+Exhaust CPU, memory, network
+
+How to handle
+
+Rate limiting (API Gateway)
+
+Throttling
+
+Autoscaling
+
+WAF (Web Application Firewall)
+
+Bot protection
+API Gateway rule:
+
+Allow max 100 requests per minute per IP
+
+2. Authentication/Authorization Attacks
+Brute force attcks-- taril and errror trying idffer uid,pwds
+token thefting --  involves an attacker stealing an active user's authentication token to bypass the login process entirely.
+ using malware, sinfiing,xss cross sote scripting
+session hijacking-- taken contrl of seeesion
+
+account lock aftr certain limitin
+captha uathentice
+MFA
+Oauth-jwt
+short lived tokens,refreshtokens
+
+3. SQL Injection
+What happens
+
+Attacker injects SQL to read or modify DB.
+
+How to handle
+
+Parameterized queries
+
+ORM frameworks Use ORM like Mongoose or EFCore
+
+Input validation
+7. Cross-Site Scripting (XSS)
+Attack
+
+Injects malicious JavaScript into UI.
+
+Prevent
+
+Escape HTML in UI
+
+Input sanitization
+
+Use Content Security Policy (CSP)
+
+-------------------
+
+We use Azure App Services to host our .NET APIs. Azure Key Vault is used for 
+secure storage of secrets and certificates. Azure API Management acts as our API 
+gateway for routing, throttling, authentication, and request handling. For CI/CD, 
+we use GitHub Actions to build the code, run tests, generate artifacts, and 
+deploy to the Azure environment. For monitoring, we rely on Azure Monitor and 
+Application Insights for centralized logging, performance metrics, and alerting
+
+
+----------
+Openshift:
+OpenShift bundles Kubernetes with all necessary operational and developer tools 
+(networking, monitoring, logging, security, CI/CD) into a single, commercially 
+supported product.
+building, deploying, and operating containerized applications.
+
+it have all self service with webconsole user friendly , where we operate everythign insingle console
+ deploy, manage the pods, logs, alerts,monitoring,
+ loadbalncing,
+ 
+ Openshft-
+ Github-hook-detect chnages-jenkins piplen- build and generate docket image-
+ docker image is pushed into container registery,-
+ it ll be hosted in OS pods
+ 
+ contaoner platform
+ depending on the roles, we can see
+ webconsole,
+ we can see
+ clusteres,utilization,cpu,memeory,builds, monitoring,work loads,secrets
+ topology
+ 
+----------

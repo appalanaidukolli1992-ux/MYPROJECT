@@ -1,0 +1,282 @@
+PINFO_INtegrations
+CRC is the data integration point to access Product Information from PIA family 
+of applications. ​
+
+CRC provides a simplified data model of all product information, which makes it 
+easier for consumers to access the data.​
+
+CRC has multiple ways of consuming/distributing data.​
+
+Consuming – Event Transformation, IPIX, IDRS​, IIP.
+
+Distributing – ODL, PI-API, IIP, EBCCRC, IDRS.
+
+-------------
+DB performance :
+1. schema & storgae optimization
+like table partitioning for larger tables
+compression techinqiues- table, row, index compressions
+2. indexing 
+3. Query optimzation- query execution plan, avoid using bulk selction, select 
+*, and proper joins,
+avoid 
+4. memory caching techinques, result caching for frequently used queries
+5. monitoring & maintaince
+AWR reports & AHS reports for analyse performcne bottle necks,
+6. time to time clean up activiteis
+------------------------
+AWR reports:'
+Oracle takes snapshots of performance statistics
+
+Default snapshot interval: every 60 minutes
+
+Default retention: 8 days
+
+Data is stored in SYSAUX tablespace
+Statistics collected include:
+
+Wait events
+
+SQL execution stats
+
+I/O activity
+
+CPU usage
+
+Memory usage
+
+Instance efficiency
+
+Best practice
+
+Capture AWR during a known problem time
+
+Compare with a normal workload period
+5. Best Practice Workflow
+
+Identify problem time window
+
+Generate AWR report
+
+Check Top Timed Events
+
+Identify Top SQL
+
+Apply SQL or structural fixes
+
+Re-run AWR to validate improvement
+----------------
+
+Oracle cloud opprtnuties:
+| Option             | Cost   | Risk   | Performance | Long-Term Value |
+| ------------------ | ------ | ------ | ----------- | --------------- |
+| On-Prem DB         | High   | Low    | Medium      | Low             |
+| Oracle on Azure VM | High   | Medium | High        | Medium          |
+| Oracle on OCI      | Medium | Low    | Very High   | High            |
+| Azure-Native DB    | Low    | High   | High        | Very High       |
+
+--------------------------------
+Oracle Cloud Infrastructure (OCI) is Oracle’s enterprise-grade cloud platform, 
+designed primarily for:
+
+High-performance workloads
+
+Oracle Databases
+
+Mission-critical enterprise applications
+
+OCI provides IaaS + PaaS services similar to Azure and AWS, but with deep 
+Oracle integration.
+Key Advantages
+
+Native Oracle support
+
+Lower Oracle license cost
+
+Better performance for Oracle DB
+
+Built-in high availability and DR
+Fully managed
+
+Auto tuning, patching, backups
+
+Auto scaling CPU and storage
+
+Built-in security (always encrypted)
+
+Pros
+
+Minimal DBA effort
+
+High availability by default
+
+Lowest operational cost long-term
+
+--------------
+
+maintaince activity :
+1. Backup and Recovery
+
+Configure and monitor RMAN backups
+2.Patching and Upgrades
+
+Apply Quarterly Release Updates (RU)
+3. Performance Monitoring and Tuning
+
+Review AWR / ASH reports
+4. Statistics Management
+locks stats,	
+5. Space Management
+Monitor tablespace usage
+
+Add/resize datafiles
+
+Clean up unused objects, schema, users,temp tables, clean obsolute jobs
+
+Add/resize datafiles
+
+6. distare recovery actviity
+Configure Data Guard
+
+db refresh.--
+taking bac up of objects, rows count and validate, skip enviroment specifc, 
+config, password, user roles,..
+
+Monitor standby
+Ensure failover readiness
+7.
+Applicaitons..
+Update SSL certificate, server upgrade, network certificate,
+----------
+OEM stands for Oracle Enterprise Manager.
+
+It is Oracle’s centralized monitoring, management, and administration tool for 
+Oracle databases and related infrastructure.
+OEM = Oracle’s official DB monitoring and management tool
+
+Central UI for monitoring, alerts, performance, and admin
+
+Used mainly by DBAs in enterprise environments
+
+-------------
+
+DBass:DBaaS = a managed database service running on OCI
+Oracle Cloud Infrastructure (OCI)
+ ├── Compute
+ ├── Storage
+ ├── Networking
+ ├── Security
+ └── Database Services (DBaaS)
+      ├── Base Database Service
+      ├── Exadata Cloud Service
+      └── Autonomous Database
+
+
+Process: Moving from On-Prem Oracle DB to OCI DBaaS
+Step 1: Assess Current Database
+
+DB version (11g / 12c / 19c)
+
+Size and growth
+
+Features used (RAC, partitioning, TDE, etc.)
+
+Downtime tolerance
+
+--------------------
+code architecture ;
+Clean Architecture–based .NET Core Web API.
+Clean Architecture enforces dependency inversion so that business logic is 
+independent of technical details.
+to ensure separation of concerns, testability, and long-term maintainability
+
+API layer- presentation layer
+The API layer handles communication with clients. It is thin and contains only 
+controllers and request/response handling, delegating all business logic to the 
+application layer
+2. Business Layer (Application Layer)
+Coordinates application use cases and workflows.
+The Business or Application layer contains application-specific logic and use 
+cases. It orchestrates domain objects and defines contracts that infrastructure 
+implements
+3. Domain Layer (Core)
+The heart of the application that represents the business problem.
+'The Domain layer represents the core business logic and rules. It is 
+independent of frameworks and infrastructure and contains entities and domain 
+behavior
+'
+4. Infrastructure Layer
+Technical implementation details.'
+The Infrastructure layer contains technical concerns like data access and 
+external service implementations. It depends on interfaces defined in the 
+application or domain layer
+API → Business → Domain
+          ↑
+   Infrastructure
+
+'
+---------------------
+coding standards i followed:
+Clan architecture 4 layer speperation of concerns 
+design patterns
+•	✅ Repository Pattern: Data access abstracted through repositories
+•	✅ Dependency Injection: Constructor injection throughout
+•	✅ DTO Pattern: Request/Response objects separate from entities
+•	✅ Middleware Pattern: Cross-cutting concerns (exception handling, authentication)
+•	✅ Handler Pattern: Business logic encapsulated in handlers'
+3.2. Naming Conventions
+C# Standards (PascalCase, camelCase)
+3. SOLID Principles
+documentation and appropriate comments 
+8. Input Validation
+Data Annotations
+Business-Level Validation
+Model valications
+9. Async/Await Pattern
+for faster processing
+10.error handling
+cusotm excetions and global exceotion handlers
+user feidnly error messages
+11. Security Practices
+API Key Authentication
+No Hardcoded Secrets
+12. Database Best Practices
+Entity Framework Core Patterns
+13. RESTful API Standards
+HTTP Verbs proper status codes
+
+Request → Controller → Handler → Repository → Database
+         (HTTP)      (Business)   (Data)
+         
+Response ← Controller ← Handler ← Repository ← Database
+          (HTTP)       (DTO)      (Entity)
+		  Standard	Status
+✅ Clean Architecture	Implemented
+✅ SOLID Principles	Followed
+✅ Repository Pattern	Implemented
+✅ Dependency Injection	Throughout
+✅ Async/Await	Consistent
+✅ RESTful API	Standard compliant
+✅ Error Handling	Global + Custom exceptions
+✅ Validation	Data annotations + Business rules
+✅ Naming Conventions	C# standards
+✅ XML Documentation	Controllers & Handlers
+✅ Security	API Key authentication
+✅ Testability	Interface-based design
+✅ Code Organization	Layer-based structure
+✅ DRY Principle	No code duplication
+✅ Explicit Dependencies	Constructor injection
+--
+
+
+--------
+design database:
+Requirements → Entities → Relationships → Normalization → Constraints → Indexes 
+→ Oracle physical design → Security → Performance → Testing
+
+
+
+
+
+
+

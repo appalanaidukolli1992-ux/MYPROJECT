@@ -1,0 +1,115 @@
+POWERBI:
+Q5: What’s the difference between calculated columns and measures in Power BI?
+Calculated Column:
+
+Evaluated row by row when the data is loaded or refreshed.
+
+Stored in the data model as part of the table.
+
+Example:
+
+Profit = Sales[SalesAmount] - Sales[Cost]
+
+
+Each row gets its own Profit value.
+
+Use when you need a value for each row or to create relationships.
+
+Measure:
+
+Calculated on the fly depending on the filter context (slicers, rows in a visual, etc.).
+
+Not stored in the table; more memory-efficient.
+
+Example:
+
+Total Sales = SUM(Orders[Amount])
+
+
+Calculates dynamically based on filters applied in your report.
+
+Measures are preferred for KPIs and aggregations, as they update automatically with user interactions.
+----------------------------
+2.
+How to calculate Month-over-Month Growth in DAX?
+
+using devide() funtion
+-----
+3.How do you handle missing or incomplete data?
+using COLLASE,BLANK()
+-----------
+4.4. Visualizations & Storytelling
+
+Q8: Which Power BI visuals would you use for different KPIs?
+
+KPI Type	Visual Suggestions
+Trend over time	Line Chart, Area Chart
+Proportion / Share	Pie Chart, Donut Chart, Stacked Bar
+Comparison of categories	Clustered Bar / Column Chart
+Outliers / anomalies	Scatter Plot, Conditional Formatting
+Single value / summary	Card, KPI Visual
+------------------------------------
+
+5.How do you make dashboards actionable?
+
+Answer:
+
+Include interactive filters (slicers): by region, product, or time.
+
+Highlight KPIs with conditional formatting: e.g., revenue < target → red.
+
+Combine multiple visuals to tell a story: trends + top products + low-performing regions.
+---------------------
+6.5. Performance & Best Practices
+
+Q10: How do you handle large datasets in Power BI?
+
+Use DirectQuery for live queries.
+
+Aggregate data in SQL before importing.
+
+Disable unnecessary auto-date tables.
+
+Avoid complex calculated columns; prefer measures.
+
+Use incremental refresh for tables with historical data.
+--------------------
+11.
+Q11: How do you ensure your KPIs are accurate?
+
+Validate SQL output before loading into Power BI.
+
+Cross-check totals and trends.
+
+Use test slices (e.g., region X, month Y) to ensure calculations match source.
+'2. Implement Data Validation Checks
+
+Add automated checks in SQL or ETL scripts before KPIs are calculated:
+
+Row counts match source tables.
+
+Totals make sense (e.g., total stock never exceeds inventory).
+
+No negative or null values where they shouldn’t be.
+
+If a check fails, trigger an alert (email/Teams message).
+Maintain Historical Snapshots
+
+Keep a daily snapshot of KPIs in a table.
+-----------------
+3. How do you handle large, frequently updated datasets?
+
+Use incremental refresh with partitions by date.
+Import only new and changed records.
+Use aggregations for historical data and DirectQuery for live sections.
+--------------------
+4. What strategies ensure data accuracy across multiple sources?
+
+Apply Power Query transformations for consistency.
+
+Enforce data type alignment.
+
+Create validation measures (e.g., sales = revenue ÷ price).
+
+Use Dataflows for central cleansing.
+-------------

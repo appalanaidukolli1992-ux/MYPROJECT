@@ -1,0 +1,88 @@
+Relationship PBI understadn:
+Absolutely! Let me break this down step by step in a very beginner-friendly way.
+
+Even though your database tables already have relationships (foreign keys, etc.), **Power BI does not automatically know them when you import tables**. You need to **define relationships in the Power BI data model** so that it can correctly filter, aggregate, and calculate measures across tables.
+
+---
+
+## **Why You Need Relationships in Power BI**
+
+1. **Separate fact & dimension tables:**
+
+   * Your **fact table** is `KPI_InventorySnapshot` (daily KPIs for each SKU).
+   * Your **dimension tables** are SKU, Category, Supplier, Region.
+
+   Power BI needs to know how these tables are linked so slicers, filters, and visuals work correctly.
+
+2. **Filtering and aggregation:**
+
+   * Example: If you select a Region in a slicer, Power BI should automatically show KPIs **only for SKUs in that region**.
+   * Relationships tell Power BI which fields connect the tables.
+
+3. **Power BI relationships can be “one-to-many” or “many-to-one”:**
+
+   * Fact table → Many rows per SKU per day
+   * Dimension table → One row per SKU or Category
+
+---
+
+## **Step 1: Open Model View**
+
+1. Open Power BI Desktop.
+2. Click on the **Model view** icon on the left (it looks like a diagram).
+3. You’ll see all imported tables as boxes.
+
+---
+
+## **Step 2: Create Relationships**
+
+1. Identify the **key fields** you want to join:
+
+| Fact Table (KPI_InventorySnapshot) | Dimension Table      | Relationship Type |
+| ---------------------------------- | -------------------- | ----------------- |
+| sku_id                             | SKU.sku_id           | Many-to-One       |
+| SKU.category_id                    | Category.category_id | Many-to-One       |
+| SKU.supplier_id                    | Supplier.supplier_id | Many-to-One       |
+| SKU.region_id                      | Region.region_id     | Many-to-One       |
+
+2. Drag the field from one table to the corresponding field in the other table.
+
+   * Example: drag `KPI_InventorySnapshot.sku_id` → `SKU.sku_id`.
+
+3. Power BI will automatically create a **line between the tables**.
+
+---
+
+## **Step 3: Check & Configure the Relationship**
+
+1. Double-click the relationship line → relationship properties appear.
+2. Ensure:
+
+   * **Cardinality:** `Many to One ( *:1 )`
+   * **Cross filter direction:** Usually **Single** from dimension → fact table
+   * **Apply security filter in both directions:** Leave unchecked unless needed
+
+> **Tip:** Dimension tables are usually the “one” side, fact table is the “many” side.
+
+---
+
+## **Step 4: Test Your Relationships**
+
+* Go back to **Report view**.
+* Create a table visual: put **Region** from the dimension table and **Total Overstock SKUs** from the fact table.
+* If the numbers change correctly when you filter by Region, your relationships are correct.
+
+---
+
+## **Important Notes**
+
+1. **Relationships in Power BI are for reporting purposes only** — they do not affect your source database.
+2. Even if your database has foreign keys, Power BI **needs its own relationships** to correctly join tables for visuals and DAX calculations.
+3. Always connect **fact table → dimension tables**; do not connect dimension tables directly to each other unless necessary.
+
+---
+
+If you want, I can **draw a simple diagram showing the correct relationships between your KPI snapshot and dimension tables** so you can visually see how to link them in Power BI.
+
+Do you want me to do that?
+

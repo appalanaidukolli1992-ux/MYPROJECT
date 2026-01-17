@@ -1,0 +1,229 @@
+PINFO part 3
+
+1-Data modelling:
+Data modelling is Data modeling is the process of creating a visual blueprint of 
+how data is organized and related within a system
+
+It involves defining the types of data, their attributes,
+ and the relationships between them, often using diagrams and symbols
+ ---------
+ 
+ 3 levels of modelling
+ conceptual, logical,physical
+ -----------------
+ 
+ Constarints:
+Summary Table
+Constraint Type	Purpose	Example
+NOT NULL	Prevents NULL values	Mandatory columns
+UNIQUE	No duplicate values	Email, username
+PRIMARY KEY	Unique identifier	emp_id
+FOREIGN KEY	Parent-child relationships	dept_id → departments
+CHECK	Validates rules	salary > 0
+DEFAULT	Sets auto-value	default status
+DEFERRABLE	Delay validation	ETL/batch ops
+---------------------------
+
+3. Normalizarion:
+Normalization is a database design process applied to SQL and thus
+to the underlying Oracle database schema.
+Normal Forms (NF)
+Normalization is achieved by adhering to a set of rules called Normal Forms. 
+A database schema is typically considered "normalized" if it meets the
+ requirements of the Third Normal Form (3NF).
+------------
+ 1. First Normal Form (1NF)
+A table is in 1NF if:
+
+Each column contains only atomic (single, indivisible) values.
+
+There are no repeating groups of columns.
+
+Each row is unique (i.e., it has a Primary Key).
+
+2. Second Normal Form (2NF)
+A table is in 2NF if:
+
+It is already in 1NF.
+
+
+All non-key attributes (columns not part of the primary key) are fully 
+functionally dependent on the entire Primary Key. This rule applies primarily 
+when a table has a composite primary key (a key made of two or more columns).
+It eliminates partial dependencies.
+
+3. Third Normal Form (3NF)
+A table is in 3NF if:
+
+It is already in 2NF.
+
+Removing trasnitive depedenices
+
+There are no transitive dependencies. A transitive dependency exists when
+ a non-key attribute is dependent on another non-key attribute. The rule ensures 
+all non-key attributes depend only on the primary key.
+
+---
+Higher Normal Forms
+The forms beyond BCNF are typically used only in highly specific, complex,
+ and theoretical database scenarios.
+
+Fourth Normal Form (4NF): A table is in 4NF if it is in BCNF and has no
+ multi-valued dependencies
+ (where two or more independent attributes depend on the key).
+
+Fifth Normal Form (5NF): Also known as Project-Join Normal Form (PJ/NF).
+ It eliminates join dependencies by ensuring that the table cannot be 
+ non-loss decomposed into any number of smaller tables.
+
+Sixth Normal Form (6NF): A very specialized form used for temporal databases
+ (databases that track changes over time).
+
+------------
+
+Table databse design
+Entity-Relationship Diagram (ERD) or a Relational Model Diagram
+stpes :
+**Concise version**
+
+1. **Gather requirements**
+
+   * Identify core business entities, relationships, and rules from use cases and APIs.
+
+2. **Model the domain**
+
+   * Create a conceptual/logical ERD with entities, attributes, keys, and cardinalities.
+   * Apply 1NF, 2NF, and 3NF to eliminate redundancy and dependency issues.
+
+3. **Design Oracle schema**
+
+   * Group tables by domain (e.g., ORDER_MGMT, CUSTOMER_MDM).
+   * For each table: choose proper data types, define PKs, FKs, constraints (NOT NULL, UNIQUE, CHECK), and deletion rules.
+
+4. **Implement relationships**
+
+   * Use FKs for 1–N.
+   * Use junction tables for M–N.
+   * Use lookup tables for codes and statuses.
+
+5. **Optimize physical design**
+
+   * Add necessary indexes (PKs, FKs, filter columns).
+   * Consider partitioning and naming standards.
+   * Centralize logic in SQL/PLSQL and avoid row-by-row operations.
+
+6. **Support versioning and enhancements**
+
+   * Analyze iimpact on existing ERD.
+   * Add tables/columns without breaking backward compatibility.
+   * Favor additive changes and use views/synonyms/APIs to insulate consumers.
+   
+-------------  
+
+Questions from the interview
+1. what are other kind of architectures we have in API dot net
+layered arcuhtetite, --simple crud operations
+clean architectire-- complex business logic
+verticla slice
+CQRS Command Query Responsibility Segregation
+Minimal API
+microservices architectire -- large distributes sustesm
+
+
+2. dot net version, whihc version you have used?
+dotnet 10
+API.csproj file
+---
+
+3. how did you handle validations, which layers you handled the validaitons and how?
+----------------------
+4. if you need to take this into production , what other stpes will you take?
+Production Deployment Checklist
+Infrastructure
+•	✅ Load balancer configured
+•	✅ Auto-scaling rules set
+•	✅ Database backups automated
+•	✅ Disaster recovery plan
+•	✅ CDN for static content
+•	✅ SSL certificates installed
+Monitoring
+•	✅ Application Insights configured
+•	✅ Alerts for errors and performance
+•	✅ Uptime monitoring (Pingdom, UptimeRobot)
+•	✅ Log aggregation (ELK, Splunk)
+•	✅ APM tool integrated
+Security
+•	✅ Penetration testing completed
+•	✅ Security scan passed
+•	✅ Secrets in Key Vault
+•	✅ Network security groups configured
+•	✅ DDoS protection enabled
+Documentation
+•	✅ API documentation published
+•	✅ Runbook for operations
+•	✅ Incident response plan
+•	✅ Architecture diagrams
+Performance
+•	✅ Load testing completed
+•	✅ Database optimized and indexed
+•	✅ Caching strategy implemented
+•	✅ CDN configured
+---
+Summary Priority List
+Must Implement (Critical):
+1.	Comprehensive logging (Serilog + Application Insights)
+2.	Health checks
+3.	Rate limiting
+4.	Secrets management
+5.	Database resilience
+6.	Global exception handling (already have)
+Should Implement (High Priority): 7. Response caching 8. API versioning 9.
+ Correlation IDs 10. Request/response logging 11. Background jobs
+Nice to Have (Medium Priority): 12. Unit & integration tests 13. Audit logging 
+14. Pagination 15. Security headers 16. Performance monitoring
+"In summary, while the current implementation has solid foundations, production 
+requires robust logging, monitoring, rate limiting, caching, versioning, and 
+proper secrets management. These additions ensure reliability, security, 
+scalability, and maintainability in a production environment."
+----------------
+
+5. what cloud will you choose to deploy this?
+
+AZure app services,
+Steps :
+1.	Azure Setup: Create Resource Group, SQL Database, App Service Plan, and Web App
+2.	Database Migration: Switch from SQLite to Azure SQL and create migrations
+3.	Configuration: Set connection strings and app settings in Azure Portal
+4.	Deployment: Publish via Visual Studio or set up CI/CD with GitHub Actions
+5.	Post-Deployment: Apply migrations, verify functionality, configure monitoring
+6.	Security: Implement secrets management, HTTPS, and proper authentication
+7.	Monitoring: Use Application Insights to track performance and errors
+
+Docker stpes :
+1.	Create Dockerfile with multi-stage build for optimized images
+2.	Add .dockerignore to exclude unnecessary files
+3.	Handle database by migrating to PostgreSQL or using volumes
+4.	Use Docker Compose for local multi-container development
+5.	Build and test locally before deploying
+6.	Push to container registry (Docker Hub, ACR, or GHCR)
+7.	Deploy to cloud using Container Instances, Container Apps, or Kubernetes
+8.	Set up CI/CD with GitHub Actions for automation
+9.	Follow best practices for security, health checks, and monitoring
+
+ or az container apps, or like docker, AKS, openshift
+-----------------------
+
+SEB interview qiestions:
+1. assume like if you habe angular code and .net code will able to write same 
+github action manifest file to write cicd?
+2. how 2 microservices communicate?
+event, message KAFKA, data security. 
+
+answer
+synchronous.-  request repsonse apparoch.-https clinet, grpc
+asynchornous-- event based - messagng- kafa.azure service bus,..
+
+API gateway for safe comunciaiton
+
+no sharing dbs in MS
+3. 

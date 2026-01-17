@@ -1,0 +1,144 @@
+Prompt:
+keep in mind, if i'm preparing for senior db developer role,
+and that database is quiet big db , multiple applicaitons used that db, having 
+multiple schemas, and in bound out bound job that refreshes and sends data.JOb 
+scheduled and runs through control-m.
+
+Now explain what kind of quetions i may get MV, Sqeqeunces Pov
+.---------------
+
+PINFO preparation part2-
+------------
+V$ views tables
+v$ tables (also called Dynamic Performance Views) are real-time monitoring views maintained by the Oracle instance to show information about memory, processes, sessions, locks, I/O, SQL execution, optimizer behavior, and overall system health.
+
+They are not normal schema tables—they are internal structures exposed as views.
+1. What Are v$ Views?
+
+They are dynamic views built on top of X$ structures (internal kernel tables).
+
+They expose live runtime data from memory (SGA + background processes).
+
+They are mostly read-only.
+
+Most are session-dependent, meaning they show data relevant to the user’s current rights.
+
+Examples:
+
+v$session – live sessions
+
+v$sql – SQL in shared pool
+
+v$process – OS processes for Oracle
+
+v$lock – locks
+
+v$system_event – waits
+
+v$undostat – undo statistics
+
+v$log – redo log info
+
+These are essential for real-time diagnostics.
+5. Why Are v$ Views Important?
+
+They support all real-time diagnostics:
+
+Live wait events
+
+Active sessions
+
+Running SQL
+
+Resource usage (CPU, I/O, temp, undo)
+
+Locking/blocking
+
+Background process state
+
+Recovery status
+
+Memory usage
+
+Every performance tuning activity uses v$ views.
+
+Examples:
+
+Troubleshooting slow applications
+
+Debugging batch failures
+
+Identifying blocking sessions
+
+Analyzing deadlocks
+
+Investigating CPU spikes
+
+Monitoring long-running SQL
+
+RCA for ORA errors
+.----------------------------------------------------
+
+2. JOBS handling, RCAs,..
+
+check the job logs, idneify root cause,
+try to fix oracel errors, blocking sessiosn,
+re run the job
+
+--------
+3 .Materilzed views:
+
+A materialized view is a database object that stores the results of a 
+query physically on disk. It behaves like a table that is generated from 
+a query, and it can be refreshed to stay in sync with the underlying data.
+
+
+1. Purpose
+
+Improve performance for heavy, expensive queries (joins, aggregations).
+
+Cache precomputed results so the database doesn’t rerun the full query each time.
+----------------
+
+4. Sequences_:
+A sequence is a database object that generates a series of numeric values, 
+
+typically used for primary keys or any place you need unique, incremental
+ numbers.
+
+
+Core characteristics:
+
+1. Independent object
+A sequence is not tied to a table. Multiple tables or processes can use the same
+ sequence if needed.
+
+----------------
+1. MV refresh takes 2 hours instead of 20 minutes. How to diagnose?
+
+Check source-table data growth and skew.
+
+Examine execution plan changes due to updated statistics.
+
+Check blocking/locking during refresh.
+
+Verify MV logs (if incremental) for excessive changes.
+
+Review I/O pressure or degraded storage performance.
+
+Compare refresh method (FAST vs COMPLETE) to expected behavior.
+---------------------
+2. Two dependent MVs must refresh in sequence, but Control-M triggers them
+ in parallel. Solution?
+
+Add job dependency rules in Control-M (Job B “On-OK” Job A).
+
+Implement an internal DB lock/table-based semaphore to serialize refreshes.
+
+Combine refresh into a single stored procedure that Control-M runs once.
+
+Use DB scheduling constraints to enforce order if Control-M cannot.
+------------------------------------
+3.¨'
+schedulers : crone jobs inside DB, ex: mv refreshs
+

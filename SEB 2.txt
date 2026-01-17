@@ -1,0 +1,155 @@
+SEB Prep-2
+---
+Docker :
+ docker container is wraps of piece of software in to single filesystem 
+ that contains evyrthing that needs to be runa software. inlcuding libraries, 
+ tool, dependecises
+ ,
+ 
+ How to deploy: Kubernates
+ 1in ur services, src file, generate docker file(steps of instruction to 
+ create image)
+ similar graddle file, YAML file.
+ 2. write manifest file(yaml file)
+ 
+Sequential Steps to Deploy Microservices
+Code Development & Build
+
+Write and test microservice code in .NET Core.
+Package dependencies and build artifacts.
+Containerization
+
+Create Docker images for each microservice.
+Define Dockerfiles specifying runtime, dependencies, and environment variables.
+
+Push to Container Registry
+
+Push images to Azure Container Registry or Docker Hub for centralized storage.
+Orchestration Setup
+
+Use Kubernetes (AKS) or Docker Swarm for managing containers.
+Define Kubernetes manifests (Deployment, Service, ConfigMap, Secret).
+
+CI/CD Pipeline
+
+Configure Azure DevOps/Jenkins pipelines for automated build, test, and 
+deployment.
+Include stages for unit tests, security scans, and deployment to AKS.
+
+Service Discovery & API Gateway
+
+Implement API Gateway (e.g., Azure API Management or NGINX) for routing and load 
+balancing.
+Enable service discovery via Kubernetes DNS.
+
+Monitoring & Logging
+
+Integrate Splunk, AppDynamics, Prometheus, Grafana for health checks and 
+performance monitoring.
+Configure alerts for failures and anomalies.
+
+Scaling & Updates
+
+Use Kubernetes Horizontal Pod Autoscaler for scaling based on CPU/memory.
+Deploy updates using rolling updates or blue-green deployments.
+
+----------------
+How do you handle failires in microsrvices
+I handle failures using resilience patterns (Polly), Kubernetes health probes, 
+centralized logging, and distributed tracing tools like OpenTelemetry to quickly 
+identify and fix issues
+Resilience Patterns:
+
+Implement Circuit Breaker, Retry, and Timeout using libraries like Polly in .NET.
+ enabling horzontal auto scalign,
+ Health Checks & Self-Healing:
+ Centralized Logging & Monitoring:
+ Alert logs
+ -----------------------
+ An API Gateway is a single entry point for all client requests to multiple 
+microservices. Instead of clients calling each microservice directly, they send 
+requests to the gateway, which routes them to the appropriate service.
+API Gateway is the single entry point for external clients.
+It handles:
+
+Authentication
+
+Authorization
+
+Routing
+
+Rate limiting
+
+Logging
+
+Request/response transformation
+
+Splitting the load
+----------------
+MS versioning
+I version microservices using URI path versioning for simplicity and backward 
+compatibility, and sometimes header-based versioning for flexibility
+--------------------
+
+ How do you test microservices?
+
+Unit tests with xUnit/NUnit and mocks (Moq).
+Integration tests using TestContainers/Docker Compose.
+Contract tests with Pact to ensure API compatibility.
+End-to-end tests with Postman or Selenium, automated in CI/CD.
+--------
+
+Design principlease with MS
+ Autonomous, Singlar resposbity,
+ clear bund contexts
+ Loosly couple, independanct deploybility,scalibiloty, ready for CI CD, resilinece
+ ----------------
+ Handlers:
+ Handlers are classes that process these commands or queries.
+ API handlers, event hanlders,messg handlers
+ -------------
+ CI/CD
+ integration,Delivry
+ autmatiing manual task in release deployment
+ 
+ code commit multiple developers,build,unitintergartion tests,
+ creating applciation image, funtiona, UAT,confisguation mgmt,load testing, deployment.
+ build- test-deplotemt
+ 
+ -----------
+ github actions
+ CI CD tool
+ Build, test, and deploy your code right from GitHub.
+ 
+ a powerful continuous integration and continuous delivery (CI/CD) platform built 
+directly into GitHub that allows you to automate software development workflows, 
+such as building, testing, and deploying your code
+
+Automating the work flows,
+in github-Action s tab, you can see
+in porject under SRC create work flow yaml files
+
+itäs like weevr we pulll request automically deploys the code in test envoeronetn.
+whne push our code to main branch- it should automaiclly deploys in production
+
+when pull requets happens, we need to run the test cases, before it ll merge into 
+main branch.
+---------
+Azure moniotr:
+Azure Monitor is a comprehensive monitoring solution for collecting, analyzing, 
+and responding to monitoring data from your cloud and on-premises environments. 
+You can use Azure Monitor to maximize the availability and performance of your 
+applications and services. It helps you understand how your applications are 
+performing and allows you to manually and programmatically respond to system 
+events.
+---------------
+
+Applicaiton isnights:
+service used to monitor the performance, availability, and usage of live web 
+applications
+ Kusto Query Language (KQL to extract insights
+--------------
+
+ 
+ 
+ 

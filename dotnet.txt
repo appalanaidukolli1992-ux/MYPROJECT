@@ -1,0 +1,247 @@
+dotnet ef migrations add InitialCreate --project Infrastructure --startup-project 
+API
+ 
+I'll help you run Entity Framework Core migration. First, let me check the 
+current state of your project and see if there are any existing migrations.
+Read Data
+Let me check if there's a Migrations folder and examine the DbContext:
+Read Infrastructure
+Read ApplicationDbContext.cs
+Now let me check the project structure to see if there are any existing 
+migrations and check the startup project configuration:
+Searched for files matching **/Migrations/**, no matches
+Let me check the Infrastructure project file to see if EF Core tools are included:
+Read Infrastructure.csproj
+Let me also check the API project to see if it has the EF Core tools and to 
+understand the database configuration:
+Read API.csproj
+Let me check the Program.cs file to see how the database is configured:
+Read Program.cs
+Let me check the Infrastructure dependency injection configuration to see how the 
+database is configured:
+Read DependecyInjection.cs, lines 1 to 30
+Now I can see the setup. The project is using SQLite database. To run EF Core 
+migration, I need to:
+First, install the EF Core tools (if not already installed)
+Add an initial migration
+Update the database
+Let me run these commands:
+ 
+cd "c:\Users\GITHA\source\repos\Product"
+ 
+ 
+ 
+ 
+dotnet tool install --global dotnet-ef
+ 
+ 
+ 
+Great! The EF Core tools are already installed. Now I need to add the EF Core 
+Design package to the Infrastructure project since that's where the DbContext is 
+located:
+ 
+cd Infrastructure; dotnet add package Microsoft.EntityFrameworkCore.Design
+ 
+ 
+ 
+Good! Now I'll navigate back to the root and add the initial migration. Since the 
+DbContext is in the Infrastructure project but we need to run the migration from 
+the startup project (API), I'll specify the projects correctly:
+ 
+cd ..
+ 
+ 
+ 
+ 
+dotnet ef migrations add InitialCreate --project Infrastructure --startup-project 
+API
+ 
+ 
+ 
+Build started...              Build succeeded.              Your startup project 
+'API' doesn't reference Microsoft.EntityFrameworkCore.Design. This package is 
+required for the Entity Framework Core Tools to work. Ensure your startup project 
+is correct, install the package, and try again.            
+ 
+ 
+I need to add the EF Core Design package to the API project as well since it's 
+the startup project:
+ 
+cd API; dotnet add package Microsoft.EntityFrameworkCore.Design
+ 
+ 
+ 
+Now let's go back to the root and try the migration again:
+ 
+cd ..
+ 
+ 
+ 
+ 
+dotnet ef migrations add InitialCreate --project Infrastructure --startup-project 
+API
+ 
+ 
+ 
+t API                         Build started...              Build 
+succeeded.              Unable to create a 'DbContext' of type 
+'ApplicationDbContext'. The exception 'You need to call 
+SQLitePCL.raw.SetProvider().  If you are using a bundle package, this is done by 
+calling SQLitePCL.Batteries.Init().' was thrown while attempting to create an 
+instance. For the different patterns supported at design time, see 
+https://go.microsoft.com/fwlink/?linkid=851728                       
+ 
+ 
+The error indicates that I need to add SQLite support. Let me add the proper 
+SQLite package to the Infrastructure project:
+ 
+cd Infrastructure; dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+ 
+ 
+ 
+Now let's go back to the root and try the migration again:
+ 
+cd ..
+ 
+ 
+ 
+ 
+dotnet ef migrations add InitialCreate --project Infrastructure --startup-project 
+API
+ 
+ 
+ 
+Excellent! The migration was created successfully. Now let's update the database 
+to apply the migration:
+ 
+dotnet ef database update --project Infrastructure --startup-project API
+ 
+ 
+ 
+Perfect! The EF Core migration has been successfully completed. Let me verify 
+that the migration files were created by checking the Infrastructure folder:
+Read Infrastructure
+Read Migrations
+Excellent! Let me also verify that the SQLite database was created in the root 
+directory:
+Read Product
+Let me check if the database file was created in the API folder or root:
+ 
+Perfect! The Entity Framework Core migration has been successfully completed. 
+Here's a summary of what was accomplished:
+✅ EF Core Migration Successfully Completed
+What was done:
+Added Required Packages:
+Added Microsoft.EntityFrameworkCore.Design to both Infrastructure and API projects
+Added Microsoft.EntityFrameworkCore.Sqlite to Infrastructure project
+Created Initial Migration:
+Generated migration named InitialCreate with timestamp 20251213101752
+Migration files created in Migrations folder
+Applied Migration to Database:
+Created SQLite database file app.db in the API folder
+Successfully created all tables:
+Colours table with ColourID, ColourName, and audit fields
+ProductTypes table with ProductTypeId, TypeName, Description, and audit fields
+Products table with ProductId, Name, Price, foreign keys, and audit fields
+Created proper foreign key relationships and indexes
+Database Schema Created:
+Colours table with primary key ColourID
+ProductTypes table with primary key ProductTypeId
+Products table with foreign keys to both Colours and ProductTypes
+Proper cascade delete relationships configured
+Indexes created for foreign key columns
+Your database is now ready for use with your Product API! The SQLite database 
+file app.db has been created in the API folder and contains all the tables 
+defined in your ApplicationDbContext.
+ 
+ 
+ 
+ 
+Claude Sonnet 4 • 1x
+ 
+  modelBuilder.Entity<ProductType>().HasData(
+
+      new ProductType { ProductTypeId = 1, TypeName = "Electronics" },
+
+      new ProductType { ProductTypeId = 2, TypeName = "Clothing" },
+
+      new Produ ctType { ProductTypeId = 3, TypeName = "Books" });
+ 
+use tihis for data seeding
+
+--------------
+
+new object crartion flow
+business-data-comain -handler-controller
+
+---------------
+STeps to delete all migrations with DB for fresh start:
+del app.db
+
+dotnet ef migrations remove --project Infrastructure --startup-project API --context ApplicationDbContext
+dotnet ef migrations add InitialCreate --project Infrastructure --startup-project API --context ApplicationDbContext
+dotnet ef database update --project Infrastructure --startup-project API --context ApplicationDbContext
+
+Colour seeding :
+INSERT INTO Colours (ColourName, CreatedBy,UpdatedBy, CreatedDate,UpdatedDate,Deleteddate) VALUES 
+('Red', 'system','system', datetime('now'),datetime('now'),null),
+('Blue', 'system','system', datetime('now'),datetime('now'),null),
+('Green', 'system','system', datetime('now'),datetime('now'),null),
+('Black', 'system', 'system',datetime('now'),datetime('now'),null),
+('White', 'system', 'system',datetime('now'),datetime('now'),null);
+----------------
+product type seedign:
+	 INSERT INTO ProductTypes (ProductTypeName, CreatedBy,UpdatedBy, CreatedDate,UpdatedDate,Deleteddate) VALUES 
+	('Chair', 'system','system', datetime('now'),datetime('now'),null),
+	('Bench', 'system','system', datetime('now'),datetime('now'),null),
+	('Sofa', 'system','system', datetime('now'),datetime('now'),null),
+	('Table', 'system', 'system',datetime('now'),datetime('now'),null),
+	('Bed', 'system', 'system',datetime('now'),datetime('now'),null);
+
+Products seeding :
+INSERT INTO Products (Name, ProductTypeId, CreatedBy, UpdatedBy, CreatedDate, UpdatedDate, DeletedDate) VALUES 
+('Office Chair Pro', 1, 'system', 'system', datetime('now'), datetime('now'), null),
+('Garden Bench Deluxe', 2, 'system', 'system', datetime('now'), datetime('now'), null),
+('Luxury Leather Sofa', 3, 'system', 'system', datetime('now'), datetime('now'), null),
+('Dining Table Oak', 4, 'system', 'system', datetime('now'), datetime('now'), null),
+('King Size Bed Frame', 5, 'system', 'system', datetime('now'), datetime('now'), null);
+
+
+INSERT INTO ProductColours (ProductId, ColourId) VALUES 
+(14, 24),  -- Office Chair Pro in Red
+(14, 25);  -- Office Chair Pro in Black
+
+INSERT INTO ProductColours (ProductId, ColourId) VALUES 
+(15, 24),  -- Garden Bench in Green
+(15, 26),  -- Garden Bench in White
+(15, 27);  -- Garden Bench in Blue
+
+-- Product 3 (Luxury Leather Sofa) - Available in Black only
+INSERT INTO ProductColours (ProductId, ColourId) VALUES 
+(16, 25);  -- Luxury Leather Sofa in Black
+
+-- Product 4 (Dining Table Oak) - Available in Blue and White (2 colours)
+INSERT INTO ProductColours (ProductId, ColourId) VALUES 
+(17, 28),  -- Dining Table in Blue
+(17, 27);  -- Dining Table in White
+
+-- Product 5 (King Size Bed Frame) - Available in White only
+INSERT INTO ProductColours (ProductId, ColourId) VALUES 
+(18, 6);
+
+----
+
+product search join by id:
+SELECT 
+    p.ProductId AS id,
+    p.Name AS name,
+    pt.ProductTypeName AS productType,
+    GROUP_CONCAT(c.ColourName, ', ') AS colours
+FROM Products p
+INNER JOIN ProductTypes pt ON p.ProductTypeId = pt.ProductTypeId
+INNER JOIN ProductColours pc ON p.ProductId = pc.ProductId
+INNER JOIN Colours c ON pc.ColourId = c.ColourId
+WHERE p.ProductId = 14
+  AND p.DeletedDate IS NULL
+GROUP BY p.ProductId, p.Name, pt.ProductTypeName;
+-----------

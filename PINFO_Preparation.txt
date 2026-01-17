@@ -1,0 +1,602 @@
+Oracle architecture :
+-------------
+Oracle architecture consists of two main components:
+
+Oracle Instance (memory + processes)
+
+Oracle Database (physical storage)
+-------------------------
+1. Oracle Instance
+
+An Oracle instance is the memory structures + background 
+processes required to run the database.
+
+A. Memory Structures
+1. SGA (System Global Area)-Shared memory used by all sessions. Main components:
+buffer cache,shared pool,redo log  buffer, large pool,java pool
+Buffer Cache
+Caches data blocks read from datafiles. Reduces physical I/O.
+
+Shared Pool
+Stores parsed SQL, execution plans, and data dictionary information.
+
+Redo Log Buffer
+Holds redo entries (change information) before LGWR writes them to redo logs.
+
+Large Pool (optional)
+Used for RMAN, parallel execution, shared server.
+
+Java Pool / Streams Pool
+Used only if related features are enabled.
+----------------
+2. PGA (Program Global Area)
+
+Private memory for each server process.
+Used for sorting, hashing, session variables, and temporary operations.
+-------------
+2. Oracle Background Processes
+
+These processes support database operations:
+
+DBWn (Database Writer)
+Writes modified data blocks (dirty buffers) from buffer cache to datafiles.
+
+LGWR (Log Writer)
+Writes redo entries from redo buffer to redo log files.
+Triggered on COMMIT, buffer full, or timeout.
+
+CKPT (Checkpoint)
+Updates datafile headers and control files with checkpoint information; tells DBWn when to write buffers.
+
+SMON (System Monitor)
+Performs instance recovery after crashes. Cleans up temporary structures.
+
+PMON (Process Monitor)
+Cleans up dead user processes, releases locks and resources.
+
+MMON / MMNL
+Performance monitoring and AWR/ADDM collection.
+
+ARCn (Archiver)
+Copies redo logs to archive logs when in ARCHIVELOG mode.
+------
+Oracle architecture is made up of an instance and a database. The instance 
+includes memory structures like SGA and PGA, and background processes such as 
+DBWn, LGWR, and SMON. The database consists of physical files like datafiles, 
+control files, and redo logs. Together, these components ensure performance, 
+consistency, and recoverability.
+Oracle architecture consists of an Oracle Instance and an Oracle Database. The 
+instance handles processing and memory, while the database stores data 
+physically.
+
+2. Oracle Instance (Memory + Processes)
+a) Memory Structures
+
+SGA (System Global Area) – shared memory
+
+Database Buffer Cache – stores data blocks
+
+Shared Pool – SQL, PL/SQL, execution plans
+
+Redo Log Buffer – records changes for recovery
+
+PGA (Program Global Area) – session-specific memory
+
+Interview line
+
+SGA is shared across sessions, while PGA is private to each server process.
+
+b) Background Processes
+
+Key processes:
+
+DBWn – writes dirty buffers to data files
+
+LGWR – writes redo entries to redo logs
+
+CKPT – updates control files and headers
+
+SMON – instance recovery
+
+PMON – cleans failed sessions
+
+ARCn – archives redo logs (ARCHIVELOG mode)
+
+Interview line
+
+Background processes ensure performance, consistency, and recoverability.
+
+3. Oracle Database (Physical Structures)
+
+Datafiles – store actual data
+
+Control Files – database metadata
+
+Redo Log Files – transaction recovery
+
+Archived Redo Logs – backup and recovery
+
+4. Logical Storage Structures
+
+Tablespaces
+
+Segments
+
+Extents
+
+Data blocks
+
+Interview line
+
+Logical structures map how data is organized inside physical files.
+
+-------------
+
+PLSQL Questions.
+1.1. How do you design PL/SQL procedures that avoid blocking other users?
+
+Answer:
+
+Keep transactions short; do not hold row locks longer than needed.
+
+Never place COMMIT inside reusable stored procedures. Let the caller control the 
+transaction.
+
+Use SELECT … FOR UPDATE only when you must guarantee row consistency.
+
+Avoid updating the same “hot” rows repeatedly (e.g., counters, status flags).
+
+Use optimistic locking patterns with version or timestamp columns.
+
+Minimize the number of rows locked per transaction.
+
+Use proper indexes so that UPDATE/DELETE operations lock only necessary rows.
+
+Key point: long transactions = longer lock duration = more blocking.
+-------------
+stoer procedure :
+CREATE OR REPLACE PROCEDURE give_bonus(
+    p_threshold   IN  NUMBER,          -- salary threshold
+    p_bonus_pct   IN  NUMBER,          -- bonus percentage, e.g., 10 for 10%
+    p_updated_cnt OUT NUMBER           -- number of employees updated
+) AS
+    -- Cursor to select eligible employees
+    CURSOR emp_cursor IS
+        SELECT emp_id, emp_name, salary
+        FROM employees
+        WHERE salary < p_threshold;
+
+    -- Variables to hold fetched data
+    v_emp_id   employees.emp_id%TYPE;
+    v_salary   employees.salary%TYPE;
+
+BEGIN
+    p_updated_cnt := 0;
+
+    OPEN emp_cursor;
+    LOOP
+        FETCH emp_cursor INTO v_emp_id, v_salary;
+        EXIT WHEN emp_cursor%NOTFOUND;
+
+        -- Update salary with bonus
+        UPDATE employees
+        SET salary = salary + (salary * p_bonus_pct / 100)
+        WHERE emp_id = v_emp_id;
+
+        -- Increment counter
+        p_updated_cnt := p_updated_cnt + 1;
+    END LOOP;
+
+    CLOSE emp_cursor;
+    COMMIT;
+END;
+/
+---------------
+
+Troucble shooting scenraios useful queries:
+Oracle System-Level Troubleshooting Queries
+1. Active Sessions
+SELECT sid, serial#, username, machine, program, status, event, wait_class,
+blocking_session, seconds_in_wait, sql_id
+FROM v$session
+WHERE status = 'ACTIVE';
+Use cases:
+
+Identify who is blocking others.
+
+See what session is waiting on.
+
+See which application server connection is causing issues.
+--------------------
+
+2. Blocking Sessions
+SELECT s.sid, s.serial#, s.username, s.event, s.blocking_session,
+bs.username AS blocking_user, bs.program AS blocking_program
+FROM v$session s
+LEFT JOIN v$session bs ON s.blocking_session = bs.sid
+WHERE s.blocking_session IS NOT NULL;
+
+Use cases:
+
+Detect live blocking.
+
+Identify “hot row” locking in OLTP systems.
+--------------
+3. Kill Session
+ALTER SYSTEM KILL SESSION ',' IMMEDIATE;
+
+Used only when non-disruptive resolution is impossible.
+
+--------------
+4. SQL from SQL_ID
+SELECT sql_text FROM v$sql WHERE sql_id = '';
+
+Use cases:
+
+Understand root cause of blocking or heavy CPU.
+
+Copy/paste into SQL tuning tools.
+---------------------
+5. Long Running Operations
+SELECT sid, serial#, username, sql_id, elapsed_seconds, sql_text
+FROM v$session_longops lo JOIN v$sql s ON lo.sql_id = s.sql_id
+WHERE lo.time_remaining > 0;
+
+Use cases:
+
+Identify slow jobs.
+
+Troubleshoot stuck batch processes.
+.-------------
+
+6. High CPU Sessions
+SELECT ss.sid, ss.serial#, ss.username, se.VALUE AS cpu_usage, ss.sql_id
+FROM v$session ss
+JOIN v$sesstat se ON ss.sid = se.sid
+JOIN v$statname sn ON se.statistic# = sn.statistic#
+WHERE sn.name = 'CPU used by this session'
+ORDER BY cpu_usage DESC;
+
+Use cases:
+
+Identify runaway queries.
+
+Detect poorly written PL/SQL loops.
+
+----------------
+7. Find Top SQL by Buffer Gets or Execution Time
+SELECT sql_id, buffer_gets, elapsed_time, executions, sql_text
+FROM v$sql
+ORDER BY buffer_gets DESC
+FETCH FIRST 20 ROWS ONLY;
+
+Use cases:
+
+Pinpoint queries causing I/O or CPU spikes.
+
+Triage performance complaints.
+
+---------------
+8. Detect Deadlocks
+SELECT *
+FROM dba_hist_active_sess_history
+WHERE event LIKE 'enq: TX -%';
+
+SELECT *
+FROM v$diag_alert_ext
+WHERE message_text LIKE '%deadlock%';
+
+
+Use cases:
+
+RCA for application-level deadlocks.
+
+Check if table access pattern is causing issues.
+
+-------
+9. Scheduler Job Failures
+SELECT job_name, status, actual_start_date, run_duration, error#
+FROM dba_scheduler_job_run_details
+ORDER BY actual_start_date DESC;
+10. Job Logs
+SELECT * FROM dba_scheduler_job_log ORDER BY log_date DESC;
+----------------
+11. Inspect Wait Events System-Wide
+SELECT event, total_waits, time_waited, average_wait
+FROM v$system_event
+ORDER BY time_waited DESC;
+Use cases:
+
+Diagnose I/O waits.
+
+Identify latch contention.
+
+Track network latency.
+----------
+12. Identify High I/O SQL
+SELECT sql_id, disk_reads, sql_text
+FROM v$sql
+ORDER BY disk_reads DESC
+FETCH FIRST 20 ROWS ONLY;
+Use cases:
+
+Detect table scans.
+
+Missing indexes.
+-----------------
+13. Check Tablespaces for Space Issues
+SELECT tablespace_name, used_space, tablespace_size,
+(1 - used_space / tablespace_size) * 100 AS free_pct
+FROM dba_tablespace_usage_metrics;
+Use cases:
+
+Prevent job failures due to space.
+
+RCA for “unable to extend temp segment”.
+--------------
+14. check Temp Usage
+SELECT username, tablespace, SUM(blocks) * 8 / 1024 AS mb_used
+FROM v$sort_usage
+GROUP BY username, tablespace;
+Use cases:
+
+Detect SORT/MERGE operations consuming temp.
+
+Validate batch query behavior.
+---------------
+15. Undo Usage
+SELECT undoblks, begin_time, end_time
+FROM v$undostat
+ORDER BY begin_time DESC;
+-----------
+16. Session History (ASH) – Immediate Root Cause
+SELECT sample_time, session_id, session_state, event, sql_id
+FROM v$active_session_history
+WHERE sample_time > SYSDATE - 1/24
+ORDER BY sample_time DESC;
+Use cases:
+
+Identify intermittent spikes.
+
+Review patterns during incident windows.
+--------------
+17.check  Locked Objects
+SELECT l.sid, l.type, l.lmode, l.request, o.object_name, o.object_type
+FROM v$locked_object l
+JOIN dba_objects o ON l.object_id = o.object_id;
+Use cases:
+
+Identify tables/procedures being locked.
+
+RCA for batch failures.
+-------------
+18. SQL Monitor
+SELECT sql_id, operation, target, elapsed_time, sofar, totalwork, time_remaining
+FROM v$sql_monitor
+WHERE status = 'EXECUTING';
+Use cases:
+
+Live visibility into running batch steps.
+
+Catch slow operations early.
+
+------------
+
+19. Full Table Scans
+SELECT sql_id, executions, buffer_gets, disk_reads, sql_text
+FROM v$sql
+WHERE lower(sql_text) LIKE '%full%'
+ORDER BY executions DESC;
+Use cases:
+
+Missing indexes.
+
+Bad plans from bad stats.
+--------------
+
+20. Stale Stats
+SELECT table_name, stale_stats
+FROM dba_tab_statistics
+WHERE owner = 'SCHEMA_NAME';
+Performance regressions from stale/missing stats.
+
+------------------
+SYS tables views 
+1. What Is the SYS Schema?
+
+SYS is the most important and most powerful schema in Oracle.
+It contains:
+
+Core data dictionary tables
+
+Internal metadata
+
+Source code for built-in packages
+
+Dynamic performance view definitions
+
+Bootstrap tables required at startup
+
+SYS owns almost every table and view that describes the database.
+
+Examples:
+
+SYS.TAB$
+
+SYS.COL$
+
+SYS.OBJ$
+
+SYS.USER$
+
+SYS.FILE$
+
+SYS.TS$
+
+The database cannot function if SYS objects are corrupted.
+
+2. What Are SYS Tables?
+
+SYS tables are low-level physical tables that store fundamental database metadata.
+
+Examples (simplified description):
+
+SYS Table	Purpose
+OBJ$	All objects in database (tables, views, packages, triggers, indexes).
+TAB$	Table metadata (table IDs, storage info).
+COL$	Column metadata for every table.
+USER$	User/account info (hashed passwords, profiles).
+CON$, CDEF$	Constraints definitions.
+IND$, ICOL$	Index definitions and columns.
+FILE$, TS$	Datafiles and tablespace metadata.
+SEG$	Segments (tables, indexes, LOBs).
+UNDO$, ROLLBACK$	Undo extent metadata.
+
+These are not meant to be queried or altered directly.
+
+Access requires SYSDBA.
+
+3. What Are SYS Views?
+
+Most SYS views are data dictionary views, built to make SYS tables readable.
+
+Examples:
+
+DBA_TABLES
+
+DBA_TAB_COLUMNS
+
+DBA_USERS
+
+ALL_OBJECTS
+
+USER_TABLES
+
+USER_OBJECTS
+
+These views are built on top of SYS tables like OBJ$, TAB$, COL$.
+
+Example (simplified):
+
+DBA_TABLES -> SELECT … FROM SYS.TAB$ + SYS.OBJ$ + SYS.TS$
+
+
+They provide a safe and supported way to see metadata.
+
+4. Why SYS Tables Are Dangerous to Query Directly
+
+SYS tables are:
+
+Undocumented
+
+Can change between releases
+
+Not optimized for direct reading
+
+Critical to the kernel
+
+Can cause library cache/latch contention if queried frequently
+
+Should never be updated manually
+
+Using DML on SYS tables corrupts the database.
+
+5. Data Dictionary Views (Owned by SYS)
+
+Oracle provides multiple layers:
+
+A. USER_* views
+
+Show metadata for your own objects.
+
+Examples:
+
+USER_TABLES
+
+USER_OBJECTS
+
+B. ALL_* views
+
+Show metadata objects you have privileges on.
+
+Examples:
+
+ALL_TABLES
+
+ALL_PROCEDURES
+
+C. DBA_* views
+
+Show metadata for the whole database (requires DBA privileges).
+
+Examples:
+
+DBA_TABLES
+
+DBA_USERS
+
+DBA_INDEXES
+
+DBA_TAB_PRIVS
+
+These are built on SYS tables but safe to query.
+
+6. Relationship Between SYS, v$, and DBA Views
+Type	Purpose	Source
+SYS tables	Internal kernel metadata	Stored in datafiles
+v$ views	Dynamic runtime information	Memory/X$ tables
+DBA_* views	Human-readable dictionary metadata	SYS tables
+
+Diagram:
+
+SYS Tables (TAB$, COL$, OBJ$, USER$)
+        ↓
+Dictionary Views (USER_/ALL_/DBA_)
+        ↓
+DBA/Developers query them
+
+
+Dynamic views:
+
+Memory Structures (SGA/X$)
+        ↓
+v$ Views
+
+7. Examples of Common SYS Dictionary Views
+View	Purpose
+DBA_TABLES	All tables in database
+DBA_OBJECTS	All objects with status (VALID/INVALID)
+DBA_USERS	All users and properties
+DBA_INDEXES	Index metadata
+DBA_SEGMENTS	Space usage
+DBA_DATA_FILES	Datafiles info
+DBA_TABLESPACES	Tablespaces info
+DBA_SOURCE	PL/SQL source code
+
+These are safe and meant for developers/DBAs.
+
+8. Why Developers Need to Know This
+
+Understanding SYS and dictionary views helps you:
+
+Diagnose invalid objects
+
+Track schema changes
+
+Examine performance issues
+
+Debug missing privileges
+
+Check metadata during deployments
+
+Diagnose space issues
+
+Root cause failures in batch jobs
+
+Inspect constraints, triggers, and indexes
+
+This is essential knowledge for senior DB developers and production support engineers.
+--------------------------
+
+
+

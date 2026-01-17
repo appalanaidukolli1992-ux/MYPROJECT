@@ -1,0 +1,212 @@
+SEB 4 :
+Led support and development for   40+ IKEA core business applications   , 
+ensuring SLA adherence and serving as the        primary point of contact for 
+stakeholders and cross-functional teams.  
+ Managed incident, problem, and change processes by resolving application issues, 
+conducting root cause analysis (RCA),        and implementing preventive 
+measures. 
+Developed, troubleshot, and resolved bugs across    ASP.NET, .NET Core, 
+PL/SQL,      and PostgreSQL-based business        applications, ensuring a stable 
+and optimized production environment. 
+Created automation scripts and  SQL jobs  to streamline frequent service requests 
+and reporting, significantly reducing        lead time and manual effort.  
+Monitored database jobs, set up new jobs, analyzed failures, and fixed logic 
+issues to ensure smooth operations. 
+Developed scalable microservices in C#/.NET Core with seamless Azure cloud 
+integration.Performance improvement & Automations 
+Worked on  fine-tuning and  performance optimization    of the PINFO database, 
+addressing long-running sessions, high        memory consumption, data cleansing, 
+and identifying inappropriate integrations.  
+Database migrations like oracle to postgres, oracl 12c to 19c
+  *   Contributed to the migration   of the ToCompete application database from 
+Oracle to PostgreSQL, focusing on data        modeling, logic rewriting, 
+performance improvements, and configuration.    
+   *   Developed a Service Request Engine to automate frequently raised user 
+requests, resulting in significant lead time        reduction and improved 
+efficiency for end users.   
+i started  y carrier as support analyst in IKE A became in 6 years Product 
+communciation AMS team.
+worked on resolving incidetns, fixing the productio n issues of applicaitons 
+fucntional non fucntion bugs
+debugguung and fixing the codes, root cause anlaysis, 3 L5Y methods, to reduce 
+the repetive inicdietns , issues-
+  -- implmenting automations, small enhancemnt tools, to automate frequesnt unser 
+service requests,
+  -- testing the sprint chnages, release changes in different ennvironments, acts 
+as gate keeper of production.
+  -- deploying the sprint chnagesfrom test env to prodution
+  --co-ordinating the cross funtional teams pia & PIA family teams
+  -- release management tasks
+  -- team handling
+  -- sla adhearnces
+  -data base migrations activities coordinations
+  -- infrasturctures issue resolsition, non fucntiona bugs like performacne 
+tuning, server issues, network issue resolutions, 
+  -- applicatin documentations handling DOUs
+  --confleucne migrations, agile adoptions
+  -- KTs
+  --devops hands over, creating Murliple WOW documentes, DOUs,worki books to 
+handle the process to devops teams.
+  .. worked as a lean analyst on top of all range teams as SME of AMS , worked as 
+coach for 3 months
+  -- ideinfitying the unused infrasturure saving the costs
+, decomsiong of applcaition infra, handlign end to end life cycle of any 
+applciation
+
+2. component life cycle angukar ;
+The Angular component lifecycle is a series of stages, from creation to 
+destruction, where specific lifecycle hook methods can be used to run code at key 
+moments. These hooks allow developers to initialize components, react to changes, 
+and clean up resources to avoid memory leaks
+
+-----------
+3.asynchornous calls
+ primarily managed using Observables (via the RxJS library) and, to a lesser 
+extent, Promises with modern async/await syntax
+is to use reactive programming for cleaner, more efficient code, especially for 
+tasks like HTTP requests and event handling.
+
+such as built in Async pipe
+------------------------------
+optimize angular application
+Lazy-load Modules and Routes
+Load feature modules only when needed. Prefer standalone components where 
+appropriate.
+Efficient Observables
+
+Use async pipe to auto-unsubscribe.
+
+Avoid unnecessary subscribe() calls
+Memoization & Caching
+Avoid Excessive DOM Operations
+Use virtual scrolling for large lists. Keep DOM tree lightweight.
+-----------------------
+lazy loading
+Lazy loading in Angular is the technique of loading feature modules or standalone 
+components only when a route is visited, reducing the initial bundle size and 
+improving startup time.
+
+products, homs, admin page
+load only homw first dwonload those scrpts,
+using load children mention it in route to load when it triggeres
+---------------------
+rounting works
+enabling navigation between differtn views, componets in appwith reuired full reload
+app.routes.ts or app-routing.module.ts
+define rute links
+-----------------
+services
+Angualr classes where we store shared logic, in a common place and 
+injevt them into compoinets wnehever it need usign DI
+------------------
+use comonenets in u r applications, lbraries
+
+design system
+
+centalized libraries, colour variables
+------------
+Sonalr qube analysis
+SonarQube is a code quality and security analysis tool.
+code qulity
+It checks for code smells, bugs, vulnerabilities, and duplications.
+----------------
+github actions for cicd piepleines
+YAML files
+
+unit tests, SonarQube analysis, and deployment pipelines.
+documentsiton confleunce
+
+MFE
+type script related questions
+
+thousnads of data displaying in frond end, how do u it perforacely fasters
+whic apparoach do u follow
+paginations
+ caching in th eb backend
+
+
+MFE
+header and footer navigation is same,
+loading content is diff MFE
+
+nexus is deployment, business areana customer facing applicaitons
+
+Splunk
+
+agnostics
+Web component
+----------------
+splunk
+SPL splunk query lanaguge
+.--------------
+Led support and development for   40+ IKEA core business applications   , ensuring SLA adherence and serving as the        primary point of contact for stakeholders and cross-functional teams.  
+ Managed incident, problem, and change processes by resolving application issues, conducting root cause analysis (RCA),        and implementing preventive measures. 
+Developed, troubleshot, and resolved bugs across    ASP.NET, .NET Core, PL/SQL,      and PostgreSQL-based business        applications, ensuring a stable and optimized production environment. 
+Created automation scripts and  SQL jobs  to streamline frequent service requests and reporting, significantly reducing        lead time and manual effort.  
+Monitored database jobs, set up new jobs, analyzed failures, and fixed logic issues to ensure smooth operations. 
+Developed scalable microservices in C#/.NET Core with seamless Azure cloud integration.Performance improvement & Automations 
+Worked on  fine-tuning and  performance optimization    of the PINFO database, addressing long-running sessions, high        memory consumption, data cleansing, and identifying inappropriate integrations.  
+Database migrations like oracle to postgres, oracl 12c to 19c
+  *   Contributed to the migration   of the ToCompete application database from Oracle to PostgreSQL, focusing on data        modeling, logic rewriting, performance improvements, and configuration.    
+   *   Developed a Service Request Engine to automate frequently raised user requests, resulting in significant lead time        reduction and improved efficiency for end users.   
+i started  y carrier as support analyst in IKE A became in 6 years Product communciation AMS team.
+worked on resolving incidetns, fixing the productio n issues of applicaitons fucntional non fucntion bugs
+debugguung and fixing the codes, root cause anlaysis, 3 L5Y methods, to reduce the repetive inicdietns , issues-
+  -- implmenting automations, small enhancemnt tools, to automate frequesnt unser service requests,
+  -- testing the sprint chnages, release changes in different ennvironments, acts as gate keeper of production.
+  -- deploying the sprint chnagesfrom test env to prodution
+  --co-ordinating the cross funtional teams pia & PIA family teams
+  -- release management tasks
+  -- team handling
+  -- sla adhearnces
+  -data base migrations activities coordinations
+  -- infrasturctures issue resolsition, non fucntiona bugs like performacne tuning, server issues, network issue resolutions, 
+  -- applicatin documentations handling DOUs
+  --confleucne migrations, agile adoptions
+  -- KTs
+  --devops hands over, creating Murliple WOW documentes, DOUs,worki books to handle the process to devops teams.
+  .. worked as a lean analyst on top of all range teams as SME of AMS , worked as coach for 3 months
+  -- ideinfitying the unused infrasturure saving the costs
+, decomsiong of applcaition infra, handlign end to end life cycle of any applciation
+
+
+
+
+
+component life cycle angukar ;
+The Angular component lifecycle is a series of stages, from creation to destruction, where specific lifecycle hook methods can be used to run code at key moments. These hooks allow developers to initialize components, react to changes, and clean up resources to avoid memory leaks
+asynchornous calls
+optimize angular application
+lazy loading
+rounting works
+services
+
+use comonenets in u r applications, lbraries
+design system
+
+centalized libraries, colour variables
+Sonalr qube analysis
+github actions for cicd piepleines
+documentsiton confleunce
+
+MFE
+type script related questions
+
+thousnads of data displaying in frond end, how do u it perforacely fasters
+whic apparoach do u follow
+paginations
+ caching in th eb backend
+
+
+MFE
+header and footer navigation is same,
+loading content is diff MFE
+
+nexus is deployment, business areana customer facing applicaitons
+
+Splunk
+
+agnostics
+Web component
+
+

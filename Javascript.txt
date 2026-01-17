@@ -1,0 +1,136 @@
+JAva Script:
+1.Q2. What is hoisting?
+Hoisting is JavaScript’s default behavior of moving declarations to the top of the scope during compilation. Only declarations are hoisted, not initializations.
+
+----------------
+2.Explain closures.
+A closure happens when an inner function remembers variables from
+ its outer function even after the outer function has executed.
+ It’s often used to keep data private or maintain state.
+ It allows you to maintain state between function calls or hide private data.
+ Closures are used for data privacy, function factories, and maintaining state (e.g., counters, caching results, event handlers).
+ 
+
+---------------
+3.Q4. How does JavaScript handle asynchronous operations?
+JavaScript is single-threaded but asynchronous behavior is achieved using:
+
+Callbacks
+
+Promises
+Async tasks (API calls, timers) run outside the main thread,
+ and results are pushed back when ready.
+ .then
+
+async/await
+async function fetchData() {
+  const res = await fetch('https://api.example.com');
+  const data = await res.json();
+  console.log(data);
+}
+fetchData();
+Concept	C#	JavaScript
+Async keyword	Marks method returning Task	Marks function returning Promise
+Await keyword	Waits for Task	Waits for Promise
+Parallel tasks	Task.WhenAll()	Promise.all()
+Thread model	Multi-threaded	Single-threaded (event loop)
+
+key takeway :
+Async operations prevent blocking of the main thread.
+Use async/await for cleaner, synchronous-looking asynchronous code.
+
+---------------------
+
+What is Event loop, call stack,macro, micro tasks.
+
+Event loop is like manager of tasks, it ll executes follows the tasks order
+call stak is the actial worker which executes the tasks
+micros task are like prioritize task, macro task normal taks.
+
+----------------
+
+-Q6. Difference between function declaration and arrow function
+fucntion is tranditional 
+this context.
+arraow fucntion is like inline simple calcucaitons.
+funtions:
+greet("Bob"); 
+
+function greet(name) {
+  return "Hello, " + name;
+}
+Arrow:
+const double = (x) => x * 2;
+
+// A standard arrow function with explicit return
+const multiply = (a, b) => {
+  return a * b;
+  
+------------------
+What is prototype inheritance?
+avaScript implements inheritance by using objects. Each object has an internal link to another object called its prototype.
+
+Prototype inheritance enables method sharing and object extension without duplicating code.
+
+----------
+Q9. What are higher-order functions?
+
+Explanation:
+A higher-order function (HOF) either:
+
+Takes one or more functions as arguments, or
+
+Returns a function as a result.
+------------------
+What is destructuring and why use it?
+
+Explanation:
+Destructuring extracts values from arrays or objects into individual variables using a short syntax.
+It improves readability and avoids repeated dot notation.
+Destructuring makes data extraction from objects and arrays simpler, especially in API responses or parameter handling.
+
+--------------------
+async	Loads asynchronously, executes immediately	Random
+defer	Loads asynchronously, executes after HTML parsed
+
+----------------
+API
+How do you make HTTP requests using fetch or axios?
+
+Explanation:
+fetch() is a modern built-in browser API for sending HTTP requests.
+axios is a third-party library with additional conveniences like automatic JSON parsing
+
+---------------
+how do you create objects in java script
+
+var object
+coma seperated, in between curely braces
+object.create method()
+object() method
+or fucntion constructor
+
+---------------
+
+proto type chain
+it like inheritance
+inheriting the properties of particlu objetin ternal object link
+Object.getPrototypeOf(person1)
+
+-------------------
+How to call API frm Java script
+Fetch(),XMLHttpRequest,Axios
+fetch('https://api.example.com/orders', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ itemId: 42, quantity: 3 })
+})
+  .then(response => response.json())
+  .then(result => console.log('Order created:', result))
+  .catch(error => console.error('Error:', error));
+
+-------------------------
+
+
+ 
+

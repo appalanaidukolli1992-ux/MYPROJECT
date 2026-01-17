@@ -1,0 +1,39 @@
+1.Angular is a TypeScript-based, open-source front-end web application framework developed by Google.
+Key features include:
+
+Two-way data binding: Automatic synchronization between model and view.
+
+Component-based architecture: Encapsulation and reusability of UI blocks.
+
+Dependency injection: Efficiently inject services into components.
+
+Directives: Manipulate DOM elements with custom behavior.
+
+Routing: Build single-page applications with navigation.
+
+RxJS integration: Reactive programming with observables.
+----------------
+
+2. 8. What is the Angular lifecycle, and which hooks are commonly used?
+Answer:
+Angular lifecycle hooks allow you to tap into component stages:
+
+ngOnInit(): Initialization logic
+
+ngOnChanges(): On input property changes
+
+ngOnDestroy(): Cleanup before component is destroyed
+
+---------------
+3.9. How is routing handled in Angular?
+Answer:
+With Angular Router module. Defines routes in app-routing.module.ts and uses <router-outlet> in templates.
+Example:
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent }
+];
+	
+	--------------------
+	
+	

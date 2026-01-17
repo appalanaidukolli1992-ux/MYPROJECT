@@ -1,0 +1,47 @@
+1. Data Governance & Compliance
+
+Knowledge of data privacy laws (GDPR, HIPAA, CCPA).
+
+Implementing data policies, standards, and quality controls.
+
+Understanding metadata management and data lineage.
+
+2. Data Quality & Integration
+
+Data profiling, cleansing, and validation techniques.
+
+ETL (Extract, Transform, Load) processes.
+
+Data integration across systems (databases, cloud, APIs).
+
+3. Database & Data Architecture Skills
+
+Proficiency with relational (SQL) and non-relational (NoSQL) databases.
+
+Understanding data warehousing and data lakes.
+
+Knowledge of data modeling and schema design.
+
+4. Analytical & Technical Skills
+
+Data analysis and visualization (Power BI, Tableau, Python, R).
+
+Familiarity with big data platforms (Hadoop, Spark).
+
+Understanding of data security and encryption methods.
+
+5. Project & Process Management
+
+Ability to define data management processes and workflows.
+
+Experience with documentation and reporting standards.
+
+Stakeholder communication and requirement gathering.
+
+6. Soft Skills
+
+Attention to detail and problem-solving mindset.
+
+Collaboration across IT, business, and analytics teams.
+
+Adaptability to evolving data technologies.

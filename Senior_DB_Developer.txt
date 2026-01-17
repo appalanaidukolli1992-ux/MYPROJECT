@@ -1,0 +1,46 @@
+ob Details
+
+Company Description
+
+IKEA of Sweden, IoS, is responsible for developing the IKEA range and making it available to stores and customers all over the world. IoS is leading business development at IKEA and the core IKEA matrices Range, Supplying, Technical and Commercial. At IKEA of Sweden you will work in a company with endless opportunities to develop in different operational areas and countries.
+
+Business Solutions Range & Supply is a part of IKEA of Sweden. We secure relevant IT solutions for IKEA Range & Supply – today and tomorrow. Our goal is to connect business and people with information technology.
+
+Help us build integrations for the future! 
+We have an exciting time a head of us where new technology will enable new business opportunities. We come from a system landscape that has served IKEA well but it needs to be modernized. Old integrations needs to be changed to new. Old patterns needs to be challenged. New patterns needs to be embraced. 
+This team is on a mission to:
+
+“Sharing IKEA product information with the world”
+
+
+Job Description
+
+Are you a self-starter with a passion for databases and a developer’s mindset? We’re building a brand-new team in Malmö, and we’re looking for a strong,
+experienced database professional to take the lead as our first team member.
+
+In this role, you’ll work closely with a skilled team based in India—not to take over, but to take control and drive collaboration.
+ You’ll help shape the technical direction, establish best practices, and lay the foundation for a team that will grow to 4–5 people.
+
+ 
+
+Lead database development and administration efforts, with a strong focus on Oracle (preferred), PSQL, and C#
+Collaborate closely with our India-based team to align on architecture, performance, and delivery
+Travel to India as part of your onboarding and ongoing collaboration
+Help build a robust, cloud-ready infrastructure (Azure experience is a plus)
+Contribute to a complex, long-term project with a steep learning curve—your experience and personality will be key to success
+
+Qualifications
+
+Minimum 5 years of experience in database development or administration
+Strong expertise in Oracle and/or PSQL, with solid C# skills
+A developer who truly understands databases—or a database admin with a developer’s mindset
+Experience with cloud platforms (Azure preferred)
+A confident, proactive personality who thrives in complex environments
+Willingness to travel internationally (India)
+
+Additional Information
+
+As a Senior Database Developer you will hold the title Software Engineer at IKEA.
+This is a full-time position located in Malmö. We are actively conducting interviews, so we encourage you to submit your application without hesitation, The last date for application is November the 11th.   
+
+Questions about the recruitment process can be answered by Bas via basde.koeijer@inter.ikea.com     

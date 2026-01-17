@@ -1,0 +1,88 @@
+Java script basics :
+   1. HTML to define the content of web pages
+
+   2. CSS to specify the layout of web pages
+
+   3. JavaScript to program the behavior of web pages
+------------------
+JavaScript Can Change HTML Content
+One of many JavaScript HTML methods is getElementById().
+JavaScript Can Change HTML Styles (CSS)
+Changing the style of an HTML element, is a variant of changing an HTML attribute:
+document.getElementById("demo").style.fontSize = "35px";
+
+-------------
+The <script> Tag
+In HTML, JavaScript code is inserted between <script> and </script> tags.
+---------------
+script can be place in body, or head.
+fucntion, events are the key
+---
+JavaScript files have the file extension .js.
+
+To use an external script, put the name of the script file in the 
+src (source) attribute of a <script> tag:
+<script src="myScript.js"></script>
+
+------------------
+JavaScript is Case Sensitive
+
+----------
+JavaScript statements are composed of:
+
+Values, Operators, Expressions, Keywords, and Comments.
+
+This statement tells the browser to write "Hello Dolly." inside an HTML element with id="demo":
+
+document.getElementById("demo").innerHTML = "Hello Dolly."
+---------------------------
+variable declaration:
+Modern JavaScript
+Using let
+Using const
+let x = 5;
+let y = 6;
+let z = x + y;
+let person = "John Doe", carName = "Volvo", price = 200;
+let x = "5" + 2 + 3; it treats as string
+--------------------
+Block Scope
+Variables declared inside a { } block cannot be accessed from outside the block:
+
+{
+  let x = 2;
+}
+............
+global scope:
+Example
+Variables declared with varinside a { } block can be accessed from outside the block:
+
+{
+  var x = 2;
+}-
+------------
+for (let i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
+-----------------
+string tremplate :
+${expression}.
+instead writing this 
+let greeting = "Hello, my name is " + name + " and I am " + age + " years old.";
+you can write 
+let greeting = `Hello, my name is ${name} and I am ${age} years old.`;
+------------------
+Objects
+How to Create a JavaScript Object
+An object literal is a concise way to create an object.
+
+An object literal is a list of key : value pairs inside curly braces { }:
+
+const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+
+---------------------------
+
+	
+
+
+

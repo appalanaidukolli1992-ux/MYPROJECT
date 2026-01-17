@@ -42,64 +42,19 @@ Controllers, routing
 
 Dependency Injection
 
-Attribute-based routing --attrtibute on controller instead central routing it ll 
-take attirbutes idrectky from url and sends ot method
+Attribute-based routing
 
-Model Binding & Validation--Model Binding (Simple Explanation)
-
-Model Binding in ASP.NET Core automatically converts incoming HTTP request data
-(JSON, query string, route values, form data)
-into C# objects, so you don’t manually parse anything.
+Model Binding & Validation
 
 JWT Authentication / Authorization
 
---Entity Framework Core (Code-first, Migrations, LINQ)
+Entity Framework Core (Code-first, Migrations, LINQ)
 
-EF Core is a lightweight, modern ORM (Object-Relational Mapper) for .NET.
+Repository Pattern
 
-It allows you to work with a database using C# objects instead of writing raw SQL queries.
+Middleware and Logging
 
-Supports LINQ queries, change tracking, migrations, and more.
-
---Repository Pattern
--- Middleware and Logging
-Middleware is software that sits in the HTTP request pipeline and can process 
-requests and responses.
-
-Think of it as a series of steps that every request goes through before reaching 
-your controller, and every response goes through before 
-returning to the client.
-
-Examples: authentication, authorization, logging, exception handling, CORS, compression.
-
-
---Error Handling and HTTP status codes
-Code	Meaning	Example Usage
-200 OK	Request succeeded	Returning a list of items
-201 Created	Resource successfully created	After a POST request creating a new record
-204 No Content	Request succeeded but no content to return	DELETE request successful
-400 Bad Request	Client sent invalid data	Invalid JSON or missing required fields
-401 Unauthorized	Authentication required / failed	User not logged in or invalid token
-403 Forbidden	Authenticated but not allowed	User doesn’t have permission
-404 Not Found	Resource does not exist	Requested item ID not found
-500 Internal Server Error
-
-globale error handlers in middelware
-Describe it as “a centralized place to catch all unhandled errors, log them, and return a consistent response”.
-
-Mention it improves maintainability and security, as raw exceptions are not exposed to the client.
-How:Middleware intercepts the request before it reaches the controller.
-
-The middleware wraps the request pipeline in a try-catch.
-
-If any exception occurs:
-
-Logs the exception.
-
-Sets the appropriate HTTP status code.
-
-Returns a structured error response to the client.
-
+Error Handling and HTTP status codes
 
 ✅ 3. Integration Topics (Frontend + Backend)
 You must know how Angular and .NET Core work together:

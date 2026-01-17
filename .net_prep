@@ -1,0 +1,28 @@
+.NET preparation
+
+1. what is the diff btn .net and .net core
+Platform:
+.NET Framework → Windows only
+.NET Core → Cross-platform (Windows, Linux, macOS)
+
+Open Source:
+Framework → Mostly closed
+Core → Fully open-source
+
+Performance:
+Framework → Slower
+Core → High performance
+
+Deployment:
+Framework → Single system-wide version
+Core → Side-by-side, self-contained apps
+
+Hosting:
+Framework → IIS only
+Core → Kestrel, IIS, Nginx, Apache, Docker
+
+Updates:
+Framework → Minimal updates
+Core (.NET 5+) → Actively developed and future direction
+--------------------
+2.

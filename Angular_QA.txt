@@ -1,0 +1,435 @@
+ANGULAR DIRECTIVES:
+
+ Overview
+In Angular, directives are classes that let you attach behavior to elements in the DOM.
+There are three main types:
+
+1️⃣ Components
+Technically directives with a template.
+
+Example:
+
+typescript
+Copy
+Edit
+@Component({
+  selector: 'app-hello',
+  template: '<h1>Hello!</h1>'
+})
+export class HelloComponent {}
+Components = Directives + template.
+
+2️⃣ Structural Directives
+Change the DOM layout by adding/removing elements.
+
+Common examples:
+
+*ngIf – conditionally includes template.
+
+*ngFor – repeats template.
+
+*ngSwitch – switch-case rendering.
+
+Example:
+
+html
+Copy
+Edit
+<div *ngIf="isVisible">I am visible</div>
+3️⃣ Attribute Directives
+Change appearance or behavior of an element.
+
+Common examples:
+
+ngClass – adds/removes CSS classes.
+
+ngStyle – sets inline styles.
+
+Custom directives.
+
+Example of a built-in:
+
+html
+Copy
+Edit
+<div [ngStyle]="{'color': 'red'}">Styled Text</div>
+Example of a custom attribute directive:
+
+typescript
+Copy
+Edit
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+  constructor(private el: ElementRef) {
+    el.nativeElement.style.backgroundColor = 'yellow';
+  }
+  
+
+-------------------------
+2. 
+Components & Servics 
+
+🌟 Angular Components:
+Components are the heart of every Angular application.
+They control parts of the user interface and define:
+
+✅ What to show (HTML template)
+✅ How it looks (CSS styles)
+✅ How it behaves (TypeScript logic)
+
+🧩 What does a Component consist of?
+Every component has 3 main parts:
+
+1️⃣ TypeScript Class
+Contains the data and methods.
+Example:
+
+typescript
+
+export class MyComponent {
+  title = 'Welcome to Angular';
+}
+2️⃣ HTML Template
+Defines what gets rendered in the browser.
+Example:
+
+html
+
+<h1>{{ title }}</h1>
+{{ title }} = Interpolation (binding to the class property).
+
+3️⃣ CSS Styles
+Optional styles scoped to this component.
+Example:
+
+css
+h1 { color: blue; }
+
+---
+✨ Example Component
+Here’s a full example:
+
+typescript
+Copy
+Edit
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-greeting',
+  template: `<h2>Hello, {{ name }}!</h2>`,
+  styles: [`h2 { color: green; font-weight: bold; }`]
+})
+export class GreetingComponent {
+  name = 'Angular';
+}
+✅ How to use it in HTML:
+
+Wherever you want this component to appear, write:
+
+html
+Copy
+Edit
+<app-greeting></app-greeting>
+Note:
+
+selector: 'app-greeting' defines the custom HTML tag.
+
+Components have hooks you can tap into:
+
+Hook	What it does
+ngOnInit()	Called when component initializes.
+ngOnChanges()	Called when input properties change.
+ngOnDestroy()	Called just before Angular destroys the component.
+
+🎯 Quick Recap
+✅ Component = Class + Template + Styles
+✅ Components encapsulate UI + logic
+✅ Components compose to build big applications.
+
+If you want, I can show you:
+
+More about @Input() / @Output()
+
+Component lifecycle
+
+Example parent–child data flows
+
+How to style components with ViewEncapsulation
+
+Just say the word!
+
+
+
+
+-----------------------------------------------------
+Parent child componet:
+The component used within the template of another component is the child component, while the enclosing component is the parent.
+Data transfer between them is achieved using specific decorators and techniques
+@Input() @Output()
+
+
+
+You said:
+services
+
+
+ChatGPT said:
+Absolutely—let’s cover Angular Services simply and clearly.
+
+🌟 Angular Services
+✅ Services are classes in Angular that provide reusable logic or data that doesn’t 
+belong to any one component.
+
+Put simply:
+
+Services are for sharing code and data across components.
+
+🧩 Why use a Service?
+Components should only handle UI, not:
+❌ Business logic
+❌ Data fetching
+❌ Shared state
+
+That’s what services are for.
+
+🎯 What can Services do?
+✅ Fetch data from a backend (e.g., REST API)
+✅ Store and share data between components
+✅ Log messages
+✅ Handle authentication
+✅ Encapsulate complex logic
+
+🛠️ How to Create a Service
+Using Angular CLI:
+
+bash
+Copy
+Edit
+ng generate service my-service
+or:  
+
+bash
+Copy
+Edit
+ng g s my-service
+This creates:
+
+my-service.service.ts
+
+my-service.service.spec.ts (test file)
+
+✨ Example Service
+typescript
+Copy
+Edit
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root' // makes the service available app-wide
+})
+export class DataService {
+  private data: string[] = [];
+
+  addItem(item: string) {
+    this.data.push(item);
+  }
+
+  getItems() {
+    return this.data;
+  }
+}
+✅ Note the @Injectable() decorator:
+
+This tells Angular:
+“This class can be injected into other classes.”
+
+✅ providedIn: 'root':
+
+Registers the service with the root injector, so it’s a singleton (only one instance for the whole app).
+
+🧩 How to Use a Service in a Component
+Inject it into the constructor:
+
+typescript
+Copy
+Edit
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './data.service';
+
+@Component({
+  selector: 'app-example',
+  template: `
+    <button (click)="add()">Add Item</button>
+    <ul>
+      <li *ngFor="let item of items">{{ item }}</li>
+    </ul>
+  `
+})
+export class ExampleComponent implements OnInit {
+  items: string[] = [];
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.items = this.dataService.getItems();
+  }
+
+  add() {
+    this.dataService.addItem('New Item');
+    this.items = this.dataService.getItems();
+  }
+}
+✅ Key Point:
+
+Angular injects the same instance of DataService wherever you use it.
+
+🔄 Singleton vs. Scoped Services
+providedIn: 'root': Singleton across the app.
+
+providedIn: 'any': New instance in lazy-loaded modules.
+
+You can also provide services in a specific module or component providers array to scope their lifetime.
+
+📝 In One Sentence:
+Services are singleton classes you inject into components (or other services) to share data and logic.
+
+
+---------------------------------------
+
+
+
+
+
+
+----------------------------------------
+
+
+You said:
+'Data binding in angualr
+
+
+
+🌟 Data Binding in Angular
+✅ Data binding connects your template (HTML) and your component (TypeScript class).
+✅ It keeps the view and the data in sync automatically.
+
+🎯 Four Main Types of Data Binding
+Let’s break them down:
+
+1️⃣ Interpolation
+Display data from the component to the view.
+
+Syntax: {{ propertyName }}
+
+Example:
+
+html
+Copy
+Edit
+<h1>Hello, {{ name }}!</h1>
+typescript
+Copy
+Edit
+export class AppComponent {
+  name = 'Angular';
+}
+2️⃣ Property Binding
+Bind an element’s property to a value.
+
+Syntax: [property]="expression"
+
+Example:
+
+html
+Copy
+Edit
+<img [src]="imageUrl">
+typescript
+Copy
+Edit
+imageUrl = 'https://example.com/photo.jpg';
+✅ The [] mean: one-way binding from component to DOM.
+
+3️⃣ Event Binding
+Respond to user actions.
+
+Syntax: (event)="handlerFunction()"
+
+Example:
+
+html
+Copy
+Edit
+<button (click)="sayHello()">Click Me</button>
+typescript
+Copy
+Edit
+sayHello() {
+  console.log('Hello!');
+}
+✅ The () mean: listening to DOM events.
+
+4️⃣ Two-way Binding
+Combines property binding and event binding.
+
+Keeps the input field and your component property in sync.
+
+Syntax: [(ngModel)]="property"
+
+Example:
+
+html
+Copy
+Edit
+<input [(ngModel)]="username">
+<p>You typed: {{ username }}</p>
+typescript
+Copy
+Edit
+username = '';
+✅ The [()] is called "banana in a box".
+✅ You must import FormsModule to use ngModel.
+
+✨ Quick Visual Summary
+Type	Direction	Syntax
+Interpolation	Component ➡ View	{{ name }}
+Property Binding	Component ➡ View	[src]="imageUrl"
+Event Binding	View ➡ Component	(click)="doSomething()"
+Two-way Binding	Both directions	[(ngModel)]="value"
+
+🧠 Why is this powerful?
+✅ Automatic updates: If your data changes, the view updates.
+✅ Clean separation of data and presentation.
+✅ Less manual DOM manipulation.
+
+✅ Example of All Together
+html
+Copy
+Edit
+<input [(ngModel)]="name">
+<button (click)="clear()">Clear</button>
+<p>Hello, {{ name || 'Guest' }}</p>
+typescript
+Copy
+Edit
+export class AppComponent {
+  name = 'Angular';
+  clear() {
+    this.name = '';
+  }
+}
+✅ Typing in the input updates name automatically.
+✅ Clicking Clear resets it.
+✅ The <p> updates in real time.
+
+If you’d like, I can help you:
+
+See real examples in a project.
+
+Understand when to use each binding.
+
+Debug binding errors.
+
+Just let me know!

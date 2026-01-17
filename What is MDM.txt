@@ -1,0 +1,254 @@
+MDM:
+
+Data that relavetiely consistenst and realibale acrross all systems.
+ standarisized, giverned, accesble.
+What Master Data is: Products, customers, suppliers, locations, finance structures, BOMs, etc.
+
+Why MDM matters: Consistency across systems, accurate reporting, process efficiency, reduced operational risk.
+
+MDM Domains: Customer, Product, Supplier, Finance, Material (depends on company).
+
+Data lifecycle: Create → Maintain → Use → Archive → Retire.
+
+Master data models: Entities, attributes, relationships, hierarchies.
+
+-------------
+
+Master data represents the core business entities that remain relatively 
+stable across systems. My role is to ensure this data is standardized,
+ governed, accurate and accessible, so downstream processes like order
+ management, finance, planning and analytics run reliably.”
+
+--------------
+
+Data Ownership:
+Data Ownership - Business ownership,data steward,IT custodian
+
+Business Owner
+
+Accountable for the purpose, quality, and usage of the data within a business domain.
+
+Defines what data should exist, how it supports business processes, and what success looks like.
+
+Makes decisions on access, retention, classification, and acceptable quality thresholds.
+------------------------------
+Data Steward
+
+Operationally responsible for ensuring data is accurate, complete, and aligned with standards.
+
+Manages definitions, relationships, and metadata.
+
+Works with business teams to enforce rules, monitor quality issues, and coordinate remediation.
+
+IT Custodian
+
+Manages the technical infrastructure where the data resides.
+
+Ensures secure storage, backup, performance, and system availability.
+
+Implements the technical side of policies and controls but does not decide how data should be used.
+
+---------------------
+Data Policies
+
+Naming Standards;Data Creation Rules;Metadata Standards
+
+
+Rules for consistent naming of tables, fields, reports, and business terms.
+
+Prevent ambiguity and improve discoverability.
+
+Examples: required prefixes, case conventions, use of full words instead of abbreviations.
+
+Data Creation Rules
+
+Define when and how new data records may be created.
+
+Prevent duplicates, enforce required fields, and ensure data is created through approved processes.
+
+Typically includes rules on IDs, timestamps, ownership, and validation steps.
+
+Metadata Standards
+
+Requirements for documenting data meaning, lineage, classifications, and relationships.
+
+Ensure data assets can be understood, traced, and reused correctly.
+
+Includes business definitions, technical definitions, data types, allowable values, and sensitivity levels.
+-----------------------
+
+Controls :
+
+validation rules:
+automated checks.ensure correctness, completeness.
+reduce errors.
+
+workflows:
+creations to approvals.publicatiuons.
+role based cations
+
+approval processes: sign offs.proctect against unautoshied moidications.
+
+-------------
+Givenrance bodies:
+
+.. streeing commiteee,data councils.
+--------------------------------------
+
+2. Data quality & Managemrnt :
+ Data Quality
+Data quality refers to how well data meets the needs of the business 
+in terms of accuracy,
+ completeness, consistency, uniqueness, timeliness, and validity
+ 
+ Data Quality Management
+Data quality management is the set of processes, standards,
+ roles, and tools used to ensure data remains accurate, reliable, 
+ and fit for purpose throughout its lifecycle
+ 
+ ---------------
+ Key dimentions :
+  Accuracy:COmpleteness;Consistancy;Uniqueness
+  
+  Accuracy
+
+Degree to which data correctly reflects the real-world object or event it
+ represents.
+
+Measured by comparing values to trusted sources or known truth 
+(e.g., verified customer address).
+
+--Completeness
+
+Extent to which all required data is present.
+
+Involves mandatory fields, minimum data sets, and cross-entity requirements.
+
+Incomplete data often leads to failed transactions, workflow delays, 
+or misinterpretation in analytics.
+
+--Consistency
+
+Ensures the same data element holds the same value across systems, 
+reports, and processe
+
+-Uniqueness
+
+Ensures no duplicate representation of the same real-world entity.
+--------------------
+
+Tools and technique for Data qulity managemtn
+
+--Data Profiling
+
+Automated assessment of data to detect patterns, anomalies,
+ null rates, frequency distributions, and rule violations.
+
+data profiling means what u r data is taking about?
+columns, min max values, relationshsips, primary keys.., patterns..
+
+-Used to establish baselines, discover hidden issues, 
+and assess readiness for migration or integration.
+
+--Data Quality Dashboards
+
+Visualizations showing ongoing quality metrics by dimension, domain, or system.
+
+Provide trend analysis, threshold alerts, and compliance tracking.
+
+Used by stewards, owners, and operations teams for continuous monitoring.
+
+--Rule-Based Validation
+
+Configurable logic that enforces accuracy, validity, and completeness at 
+entry or ingestion.
+
+Examples: postal code format rules, required fields for supplier creation,
+table-level referential integrity.
+
+Can be applied within applications, ETL processes, APIs, or data pipelines.
+
+--Duplicate Detection
+
+Matching algorithms and heuristics to identify repeated records.
+
+Techniques include exact matching, fuzzy matching, deterministic matching, and probabilistic scoring.
+
+Used heavily in master data management to maintain entity integrity.
+-Error Handling and Remediation Workflows
+
+Processes that capture, log, route, and correct quality issues.
+
+May include exception queues, steward task assignments, automated fixes, and audit trails.
+
+----------------
+4- Data acceesability & Re-usability
+--Meta data mangt-
+Metadata = data about data.
+It describes structure, meaning, rules, origin, usage, and relationships of data assets.
+
+Examples:
+
+Attribute definitions (e.g., “Product_ID: unique identifier for a product”)
+
+Data types, formats, valid values
+
+Business rules
+
+Data lineage (source → transformation → target)
+
+Owner/steward information
+
+System location of a dataset
+Metadata management is the process of defining, storing, organizing, and governing information about data—such as meaning, origin, structure, relationships, and usage—to make data understandable, searchable, and reusable across the organization
+2. Technical Metadata
+
+Table names, columns, data types
+
+Primary keys, foreign keys
+
+Storage location (DB, lake, warehouse)
+
+File formats, partitions
+
+Example: “cust_id INT NOT NULL PRIMARY KEY.”
+--------
+
+--data catalogue
+A data catalogue is like a searchable list of all data in a company.
+It shows:
+
+What datasets exist
+
+Where they come from
+
+What columns they have
+
+Who owns them
+
+How fresh they are
+
+How they are connected to other data
+
+Alation, Collibra
+--------------------
+
+5- data lineage
+Data lineage shows the full journey of data:
+where it starts → how it moves → how it changes → where it ends.
+
+In short:
+Source → Transformations → Destination
+What Lineage Tells You
+
+Where the data came from (source system)
+
+What processes touched it (ETL/ELT jobs, queries, scripts)
+
+How the data changed (filters, joins, calculations)
+
+Where the data is used (tables, reports, dashboards)
+
+
+----------------------
+

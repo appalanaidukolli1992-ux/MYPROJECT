@@ -1,0 +1,79 @@
+PINFO 1st round :
+
+2. Why IKEA / Why Inter IKEA? — Composed Answer
+
+1 impression, 1st love, 1st company
+I began my career at IKEA and have worked across INGKA and Inter IKEA in 
+different teams. Over the past four years in Älmhult, the heart of IKEA, I gained 
+a holistic view of how IKEA operates business across the value chain. I strongly 
+connect with IKEA’s purpose, values, and long-term commitment to creating a 
+better everyday life for the many people.
+function, form, quality, sustainability, and low price
+
+I have always admired how IKEA supports communities globally—encouraging 
+small-scale manufacturers, creating opportunities for economically disadvantaged 
+groups, and driving positive social and environmental impact through initiatives 
+like IKEA Foundation. Seeing how these values are applied in real ways, not just 
+on paper, made me feel genuinely proud to work here.
+
+What inspires me most is IKEA’s focus on democratic design—offering quality, 
+well-designed products at an affordable price—not driven by maximizing profit but 
+by maximizing value for customers and society. This aligns closely with my own 
+principles.
+
+Professionally, the role at Inter IKEA matches the work I have been doing: 
+database development, data analysis, DevOps, C#/.NET development, production 
+support, and leading teams—both on-site and from India. I understand IKEA’s 
+systems, data flows, integrations, and ways of working deeply.
+
+I have a strong and genuine interest to continue growing within IKEA and 
+contributing to solutions that support the global range, supply, and product 
+information landscape. This is why I applied for this role.
+
+
+-----------------
+2. Experieicne : Db developer 
+I have been working with IKEA for about nine years across both INGKA and Inter 
+IKEA as a consultant.
+For the first six years, I worked in INGKA as a DevOps Engineer and AMS Lead, 
+taking full end-to-end ownership of core Range business applications. My 
+responsibilities included development, production support, testing, release 
+coordination, infrastructure management, and database migrations. I worked across 
+multiple areas such as Product Range Management and Product Communication, 
+ensuring stability, performance, and continuous improvement of the applications 
+and their databases.
+
+After that, I moved into Inter IKEA, in the Supply/GS1 team, where I worked as a 
+Database Developer and Analyst. My role focused on designing and developing 
+database solutions for data-mapping POCs, optimizing SQL logic, and integrating 
+GS1 standards into IKEA product master data. I worked closely with business teams 
+to understand data properties, run case-study investigations, and create 
+standardized data models that can be consumed by digital platforms like OFP and 
+the Trade Item Hub.
+
+Because of this combined experience, I have strong hands-on expertise in Oracle, 
+PostgreSQL, PL/SQL, performance tuning, and C#. I also have a deep understanding 
+of IKEA’s architecture, integrations, and data flows, which helps me contribute 
+effectively from day one
+
+----------------------
+Goal
+short term 
+long term goal
+-----------
+
+Leadership qulities:
+
+Clear communication
+tech competencis,problem solcign skills
+Ownership and accountability
+Decision making ability
+Mentorship & support
+Coloboration nd empathy
+Procativeness
+Planning and prioritzation
+---------------
+Goals?
+
+working style
+
