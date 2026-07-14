@@ -1,0 +1,7 @@
+                                    Employees earning above their department average
+
+employee_id  department_id  salary
+          2             10   70000
+          4             20   90000
+          6             20   80000
+

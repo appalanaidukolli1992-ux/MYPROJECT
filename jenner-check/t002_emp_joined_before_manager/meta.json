@@ -1,0 +1,7 @@
+{
+  "bundle": "t002_emp_joined_before_manager",
+  "source_file": "SQL_PREP.sas",
+  "source_blob_sha": "066f47a5f2886168605b99de91454540dcbb98ba",
+  "source_commit": "af93c27de59aae1e189e6aa3f1b24f71846b751f",
+  "notes": "Q7 of SQL_PREP.sas (self-join to find employees who joined before their manager). Mock Employees matches the stated schema EmployeeID/Name/ManagerID/JoinDate. Self-join and WHERE predicate unchanged, run as PROC SQL."
+}

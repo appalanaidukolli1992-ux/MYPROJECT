@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_dup_salary_by_dept",
+  "source_file": "SQL_PREP.sas",
+  "source_blob_sha": "066f47a5f2886168605b99de91454540dcbb98ba",
+  "source_commit": "af93c27de59aae1e189e6aa3f1b24f71846b751f",
+  "notes": "Q1 of SQL_PREP.sas (employees with same salary within a department, GROUP BY/HAVING COUNT>1). Mock Employees seeded from the file's own 'Rows in Group' worked example (HR/50000, Sales/60000, etc.). PROC SQL logic unchanged."
+}
