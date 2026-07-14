@@ -1,0 +1,7 @@
+{
+  "bundle": "t003_above_dept_avg_salary",
+  "source_file": "SQL_PREP.sas",
+  "source_blob_sha": "066f47a5f2886168605b99de91454540dcbb98ba",
+  "source_commit": "af93c27de59aae1e189e6aa3f1b24f71846b751f",
+  "notes": "Q18 of SQL_PREP.sas (correlated subquery: employees earning above their department average). Mock Employees uses the file's employee_id/department_id/salary schema. Correlated subquery unchanged, run as PROC SQL."
+}

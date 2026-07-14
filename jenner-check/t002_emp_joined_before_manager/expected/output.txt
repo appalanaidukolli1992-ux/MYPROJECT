@@ -1,0 +1,6 @@
+                                       Employees who joined before their manager
+
+employee  manager  employeejoin  managerjoin
+Chris     Alice       10FEB2014    01JAN2015
+Eve       Bob         05JAN2016    15MAR2018
+
